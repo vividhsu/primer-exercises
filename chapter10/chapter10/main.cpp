@@ -25,6 +25,7 @@ using std::deque;
 using std::cin;
 using std::cout;
 using std::endl;
+using std::ostream;
 
 void ex10_1(){
     cout << "-----ex10.1-----" << endl;
@@ -84,6 +85,33 @@ void ex10_6(){
     cout << endl;
 }
 
+void ex10_7(){
+    cout << "-----ex10.7-----" << endl;
+    cout << "(a): vec is empty, copy lst to vec will make vec undefined.\n";
+    cout << "change vec.begin() to back_inserter(vec)" << endl;
+    vector<int> vec;
+    list<int> lst;
+    int i;
+    while(cin >> i)
+        lst.push_back(i);
+    copy(lst.begin(), lst.end(), back_inserter(vec));
+    for (auto iter = vec.begin(); iter != vec.end(); iter++){
+        cout << " " << *iter;
+    }
+    cout << endl;
+    
+    cout << "(b): reserve only allocate the memory for vec, but vec's size is still empty.\n";
+    cout << "change vec.reserve(10) to vec.resize(10) "<< endl;
+    vector<int> vec2;
+    vec2.resize(10);
+    fill_n(vec2.begin(), 10, 0);
+    for (auto iter = vec2.begin(); iter != vec2.end(); iter++){
+        cout << " " << *iter;
+    }
+    cout << endl;
+    
+}
+
 
 int main(int argc, const char * argv[]) {
 //    ex10_1();
@@ -91,6 +119,7 @@ int main(int argc, const char * argv[]) {
 //    ex10_3();
 //    ex10_4();
 //    ex10_5();
-    ex10_6();
+//    ex10_6();
+    ex10_7();
     return 0;
 }
