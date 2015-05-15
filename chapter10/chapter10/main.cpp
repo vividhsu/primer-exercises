@@ -15,6 +15,7 @@
 
 using std::count;
 using std::accumulate;
+using std::equal;
 using std::vector;
 using std::list;
 using std::string;
@@ -55,10 +56,25 @@ void ex10_4(){
          <<endl;
 }
 
+void ex10_5(){
+    cout << "-----ex10.5-----" << endl;
+    const char a[3][4] = {"thr", "tho", "the"};
+    const char b[3][4] = {"thr", "tho", "the"};
+    vector<const char*> va (std::begin(a), std::end(a));
+    vector<const char*> vb (std::begin(b), std::end(b));
+    bool isSame = equal(va.cbegin(), va.cend(), vb.cbegin());
+    cout << "a and b are same: " << isSame << endl;
+    cout << "C-style comparison is diff. than string.\n"
+         << "because C-style strings compare the pointer value (address)\n"
+         << "not the strings themselves."
+         <<endl;
+}
+
 int main(int argc, const char * argv[]) {
-    ex10_1();
-    ex10_2();
-    ex10_3();
-    ex10_4();
+//    ex10_1();
+//    ex10_2();
+//    ex10_3();
+//    ex10_4();
+    ex10_5();
     return 0;
 }
