@@ -112,6 +112,11 @@ void ex10_7(){
     
 }
 
+void ex10_8(){
+    cout << "-----ex10.8-----" << endl;
+    cout << "back_inserter which is a container operation changes the size of the container.\n";
+    cout << "algorithm operations don't change the size of the container." << endl;
+}
 
 int main(int argc, const char * argv[]) {
 //    ex10_1();
@@ -120,6 +125,7 @@ int main(int argc, const char * argv[]) {
 //    ex10_4();
 //    ex10_5();
 //    ex10_6();
-    ex10_7();
+//    ex10_7();
+    ex10_8();
     return 0;
 }
