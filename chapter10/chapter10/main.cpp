@@ -142,6 +142,7 @@ void ex10_9(const char* title){
         a.push_back(b);
     }
     elimDups(a);
+    cout << "refer to https://github.com/Mooophy/Cpp-Primer/blob/master/ch10/ex10_09.cpp." << endl;
 }
 
 void ex10_10(){
@@ -159,7 +160,7 @@ int main(int argc, const char * argv[]) {
 //    ex10_6();
 //    ex10_7();
 //    ex10_8();
-//    ex10_9(argv[1]);
-    ex10_10();
+    ex10_9(argv[1]);
+//    ex10_10();
     return 0;
 }
