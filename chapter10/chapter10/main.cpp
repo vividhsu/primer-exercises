@@ -144,6 +144,12 @@ void ex10_9(const char* title){
     elimDups(a);
 }
 
+void ex10_10(){
+    cout << "-----ex10.10-----" << endl;
+    cout << "algorithms like sort and unique don't change the size of the contaier.\n";
+    cout << "member functions like erase change the size." << endl;
+}
+
 int main(int argc, const char * argv[]) {
 //    ex10_1();
 //    ex10_2();
@@ -153,6 +159,7 @@ int main(int argc, const char * argv[]) {
 //    ex10_6();
 //    ex10_7();
 //    ex10_8();
-    ex10_9(argv[1]);
+//    ex10_9(argv[1]);
+    ex10_10();
     return 0;
 }
