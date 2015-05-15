@@ -125,12 +125,12 @@ ostream& printVec(ostream &os, const vector<string> &words){
 }
 
 void elimDups(vector<string> &words){
-    printVec(cout, words) << endl;
+//    printVec(cout, words) << endl;
     sort(words.begin(), words.end());
     auto end_unique = unique(words.begin(), words. end());
-    printVec(cout, words) << endl;
+//    printVec(cout, words) << endl;
     words.erase(end_unique, words.end());
-    printVec(cout, words) << endl;
+//    printVec(cout, words) << endl;
 }
 
 void ex10_9(const char* title){
@@ -151,6 +151,23 @@ void ex10_10(){
     cout << "member functions like erase change the size." << endl;
 }
 
+bool isShorter(const string &s1, const string &s2){
+    return (s1.size() < s2.size());
+}
+
+void ex10_11(const char* title){
+    cout << "-----ex10.11-----" << endl;
+    ifstream input(title);
+    vector<string> a;
+    string b;
+    while(input >> b){
+        a.push_back(b);
+    }
+    elimDups(a);
+    stable_sort(a.begin(), a.end(), isShorter);
+    printVec(cout, a) << endl;
+}
+
 int main(int argc, const char * argv[]) {
 //    ex10_1();
 //    ex10_2();
@@ -160,7 +177,8 @@ int main(int argc, const char * argv[]) {
 //    ex10_6();
 //    ex10_7();
 //    ex10_8();
-    ex10_9(argv[1]);
+//   ex10_9(argv[1]);
 //    ex10_10();
+    ex10_11(argv[1]);
     return 0;
 }
