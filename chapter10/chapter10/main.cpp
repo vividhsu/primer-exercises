@@ -14,10 +14,8 @@
 #include <string>
 #include <deque>
 #include <iterator>
+#include <fstream>
 
-using std::count;
-using std::accumulate;
-using std::equal;
 using std::vector;
 using std::list;
 using std::string;
@@ -26,6 +24,7 @@ using std::cin;
 using std::cout;
 using std::endl;
 using std::ostream;
+using std::ifstream;
 
 void ex10_1(){
     cout << "-----ex10.1-----" << endl;
@@ -118,6 +117,33 @@ void ex10_8(){
     cout << "algorithm operations don't change the size of the container." << endl;
 }
 
+ostream& printVec(ostream &os, const vector<string> &words){
+    for(auto &word: words){
+        os << word << " ";
+    }
+    return os;
+}
+
+void elimDups(vector<string> &words){
+    printVec(cout, words) << endl;
+    sort(words.begin(), words.end());
+    auto end_unique = unique(words.begin(), words. end());
+    printVec(cout, words) << endl;
+    words.erase(end_unique, words.end());
+    printVec(cout, words) << endl;
+}
+
+void ex10_9(const char* title){
+    cout << "-----ex10.9-----" << endl;
+    ifstream input(title);
+    vector<string> a;
+    string b;
+    while(input >> b){
+        a.push_back(b);
+    }
+    elimDups(a);
+}
+
 int main(int argc, const char * argv[]) {
 //    ex10_1();
 //    ex10_2();
@@ -126,6 +152,7 @@ int main(int argc, const char * argv[]) {
 //    ex10_5();
 //    ex10_6();
 //    ex10_7();
-    ex10_8();
+//    ex10_8();
+    ex10_9(argv[1]);
     return 0;
 }
