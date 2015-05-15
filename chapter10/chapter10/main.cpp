@@ -12,6 +12,8 @@
 #include <vector>
 #include <list>
 #include <string>
+#include <deque>
+#include <iterator>
 
 using std::count;
 using std::accumulate;
@@ -19,6 +21,7 @@ using std::equal;
 using std::vector;
 using std::list;
 using std::string;
+using std::deque;
 using std::cin;
 using std::cout;
 using std::endl;
@@ -70,11 +73,24 @@ void ex10_5(){
          <<endl;
 }
 
+void ex10_6(){
+    cout << "-----ex10.6-----" << endl;
+    deque<int> a;
+    fill_n(back_inserter(a), 10, 0);
+    cout << "print deque:";
+    for (auto iter = a.begin(); iter != a.end(); iter++){
+        cout << " " << *iter;
+    }
+    cout << endl;
+}
+
+
 int main(int argc, const char * argv[]) {
 //    ex10_1();
 //    ex10_2();
 //    ex10_3();
 //    ex10_4();
-    ex10_5();
+//    ex10_5();
+    ex10_6();
     return 0;
 }
