@@ -197,6 +197,22 @@ void ex10_12(const char* title){
     
 }
 
+bool isFiveChar(const string &s){
+    return (s.size() >= 5);
+}
+
+void ex10_13(const char* title){
+    cout << "-----ex10.13-----" << endl;
+    ifstream input(title);
+    vector<string> a;
+    string b;
+    while(input >> b){
+        a.push_back(b);
+    }
+    partition(a.begin(), a.end(), isFiveChar);
+    printVec(cout, a);
+}
+
 int main(int argc, const char * argv[]) {
 //    ex10_1();
 //    ex10_2();
@@ -209,6 +225,7 @@ int main(int argc, const char * argv[]) {
 //   ex10_9(argv[1]);
 //    ex10_10();
 //    ex10_11(argv[1]);
-    ex10_12(argv[2]);
+//    ex10_12(argv[2]);
+    ex10_13(argv[1]);
     return 0;
 }
