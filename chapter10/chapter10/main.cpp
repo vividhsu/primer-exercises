@@ -15,6 +15,8 @@
 #include <deque>
 #include <iterator>
 #include <fstream>
+#include <sstream>
+#include "Sales_data.h"
 
 using std::vector;
 using std::list;
@@ -25,6 +27,7 @@ using std::cout;
 using std::endl;
 using std::ostream;
 using std::ifstream;
+using std::istringstream;
 
 void ex10_1(){
     cout << "-----ex10.1-----" << endl;
@@ -168,6 +171,32 @@ void ex10_11(const char* title){
     printVec(cout, a) << endl;
 }
 
+bool compareIsbn(const Sales_data& item1, const Sales_data& item2){
+    return (item1.isbn() < item2.isbn());
+}
+
+ostream& print(ostream& os, const Sales_data &item){
+    os << item.isbn() << endl;
+    return os;
+}
+
+void ex10_12(const char* title){
+    cout << "-----ex10.12-----" << endl;
+    ifstream input(title);
+    string s;
+    vector<Sales_data> v;
+    while(getline(input, s)){
+        istringstream line(s);
+        Sales_data book;
+        line >> book.bookNo;
+        v.push_back(book);
+    }
+    sort(v.begin(), v.end(), compareIsbn);
+    for(auto &vv: v)
+        print(cout, vv);
+    
+}
+
 int main(int argc, const char * argv[]) {
 //    ex10_1();
 //    ex10_2();
@@ -179,6 +208,7 @@ int main(int argc, const char * argv[]) {
 //    ex10_8();
 //   ex10_9(argv[1]);
 //    ex10_10();
-    ex10_11(argv[1]);
+//    ex10_11(argv[1]);
+    ex10_12(argv[2]);
     return 0;
 }
