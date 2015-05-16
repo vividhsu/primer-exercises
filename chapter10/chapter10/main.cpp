@@ -316,6 +316,17 @@ void ex10_20(const char* title){
     input.close();
 }
 
+void ex10_21(){
+    cout << "-----ex10.21-----" << endl;
+    //refer to https://github.com/Mooophy/Cpp-Primer/blob/master/ch10/ex10_20_21.cpp
+    int num = 3;
+    auto f = [&num] () -> bool {if(num == 0) {return true;} else {--num; return false;}};
+    while (!f()){
+        cout << num << " ";
+    }
+    cout << num << endl;
+}
+
 int main(int argc, const char * argv[]) {
 //    ex10_1();
 //    ex10_2();
@@ -336,6 +347,7 @@ int main(int argc, const char * argv[]) {
 //    ex10_17(argv[2]);
 //    ex10_18(argv[1]);
 //    ex10_19(argv[1]);
-    ex10_20(argv[1]);
+//    ex10_20(argv[1]);
+    ex10_21();
     return 0;
 }
