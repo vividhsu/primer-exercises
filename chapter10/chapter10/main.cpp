@@ -145,6 +145,7 @@ void ex10_9(const char* title){
         a.push_back(b);
     }
     elimDups(a);
+    input.close();
     cout << "refer to https://github.com/Mooophy/Cpp-Primer/blob/master/ch10/ex10_09.cpp." << endl;
 }
 
@@ -169,6 +170,7 @@ void ex10_11(const char* title){
     elimDups(a);
     stable_sort(a.begin(), a.end(), isShorter);
     printVec(cout, a) << endl;
+    input.close();
 }
 
 bool compareIsbn(const Sales_data& item1, const Sales_data& item2){
@@ -194,7 +196,7 @@ void ex10_12(const char* title){
     sort(v.begin(), v.end(), compareIsbn);
     for(auto &vv: v)
         print(cout, vv);
-    
+    input.close();
 }
 
 bool isFiveChar(const string &s){
@@ -211,6 +213,7 @@ void ex10_13(const char* title){
     }
     partition(a.begin(), a.end(), isFiveChar);
     printVec(cout, a);
+    input.close();
 }
 
 void ex10_14(){
@@ -235,6 +238,7 @@ void biggies(vector<string> &words, vector<string>::size_type sz){
 }
 
 void ex10_16(const char* title){
+    cout << "-----ex10.16-----" << endl;
     ifstream input(title);
     vector<string> v;
     string s;
@@ -242,6 +246,22 @@ void ex10_16(const char* title){
         v.push_back(s);
     }
     biggies(v, 4);
+    input.close();
+}
+
+void ex10_17(const char* title){
+    cout << "-----ex10.17-----" << endl;
+    ifstream input(title);
+    vector<Sales_data> books;
+    string s;
+    while(getline(input, s)){
+        Sales_data book(s);
+        books.push_back(book);
+    }
+    sort(books.begin(), books.end(), [](const Sales_data& a, const Sales_data& b) {return a.isbn() < b.isbn();});
+    for (auto &b: books){
+        print(cout, b);
+    }
 }
 
 int main(int argc, const char * argv[]) {
@@ -260,6 +280,7 @@ int main(int argc, const char * argv[]) {
 //    ex10_13(argv[1]);
 //    ex10_14();
 //    ex10_15();
-    ex10_16(argv[1]);
+//    ex10_16(argv[1]);
+    ex10_17(argv[2]);
     return 0;
 }
