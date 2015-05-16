@@ -213,6 +213,12 @@ void ex10_13(const char* title){
     printVec(cout, a);
 }
 
+void ex10_14(){
+    cout << "-----ex10.14-----" << endl;
+    auto f = [] (int a, int b){ return a + b; };
+    cout << f(34, 56) << endl;
+}
+
 int main(int argc, const char * argv[]) {
 //    ex10_1();
 //    ex10_2();
@@ -226,6 +232,7 @@ int main(int argc, const char * argv[]) {
 //    ex10_10();
 //    ex10_11(argv[1]);
 //    ex10_12(argv[2]);
-    ex10_13(argv[1]);
+//    ex10_13(argv[1]);
+    ex10_14();
     return 0;
 }
