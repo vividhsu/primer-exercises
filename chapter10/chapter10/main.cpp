@@ -226,6 +226,24 @@ void ex10_15(){
     cout << f(20) << endl;
 }
 
+void biggies(vector<string> &words, vector<string>::size_type sz){
+    elimDups(words);
+    stable_sort(words.begin(), words.end(), [](const string &a, const string &b) {return a.size() < b.size();});
+    auto iter = find_if(words.begin(), words.end(), [sz](const string &a) {return a.size() >= sz;});
+    for_each(iter, words.end(), [](const string &s) {cout << s << " ";});
+    cout << endl;
+}
+
+void ex10_16(const char* title){
+    ifstream input(title);
+    vector<string> v;
+    string s;
+    while(input >> s){
+        v.push_back(s);
+    }
+    biggies(v, 4);
+}
+
 int main(int argc, const char * argv[]) {
 //    ex10_1();
 //    ex10_2();
@@ -241,6 +259,7 @@ int main(int argc, const char * argv[]) {
 //    ex10_12(argv[2]);
 //    ex10_13(argv[1]);
 //    ex10_14();
-    ex10_15();
+//    ex10_15();
+    ex10_16(argv[1]);
     return 0;
 }
