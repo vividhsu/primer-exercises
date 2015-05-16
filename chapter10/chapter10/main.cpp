@@ -215,8 +215,15 @@ void ex10_13(const char* title){
 
 void ex10_14(){
     cout << "-----ex10.14-----" << endl;
-    auto f = [] (int a, int b){ return a + b; };
+    auto f = [] (int a, int b) { return a + b; };
     cout << f(34, 56) << endl;
+}
+
+void ex10_15(){
+    cout << "-----ex10.15-----" << endl;
+    int a = 50;
+    auto f = [a] (int b) { return a + b; };
+    cout << f(20) << endl;
 }
 
 int main(int argc, const char * argv[]) {
@@ -233,6 +240,7 @@ int main(int argc, const char * argv[]) {
 //    ex10_11(argv[1]);
 //    ex10_12(argv[2]);
 //    ex10_13(argv[1]);
-    ex10_14();
+//    ex10_14();
+    ex10_15();
     return 0;
 }
