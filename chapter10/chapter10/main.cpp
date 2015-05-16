@@ -264,6 +264,45 @@ void ex10_17(const char* title){
     }
 }
 
+void biggies2(vector<string> &words, vector<string>::size_type sz){
+    elimDups(words);
+    auto iter = partition(words.begin(), words.end(), [sz](const string &a) {return a.size() < sz;});
+    for_each(iter, words.end(), [](const string &s) {cout << s << " ";});
+    cout << endl;
+}
+
+void ex10_18(const char* title){
+    cout << "-----ex10.18-----" << endl;
+    ifstream input(title);
+    vector<string> v;
+    string s;
+    while(input >> s){
+        v.push_back(s);
+    }
+    biggies2(v, 4);
+    input.close();
+}
+
+void biggies3(vector<string> &words, vector<string>::size_type sz){
+    elimDups(words);
+    auto iter = stable_partition(words.begin(), words.end(), [sz](const string &a) {return a.size() < sz;});
+    for_each(iter, words.end(), [](const string &s) {cout << s << " ";});
+    cout << endl;
+}
+
+void ex10_19(const char* title){
+    cout << "-----ex10.19-----" << endl;
+    ifstream input(title);
+    vector<string> v;
+    string s;
+    while(input >> s){
+        v.push_back(s);
+    }
+    biggies3(v, 4);
+    input.close();
+}
+
+
 int main(int argc, const char * argv[]) {
 //    ex10_1();
 //    ex10_2();
@@ -281,6 +320,8 @@ int main(int argc, const char * argv[]) {
 //    ex10_14();
 //    ex10_15();
 //    ex10_16(argv[1]);
-    ex10_17(argv[2]);
+//    ex10_17(argv[2]);
+//    ex10_18(argv[1]);
+    ex10_19(argv[1]);
     return 0;
 }
