@@ -225,7 +225,8 @@ void ex10_14(){
 void ex10_15(){
     cout << "-----ex10.15-----" << endl;
     int a = 50;
-    auto f = [a] (int b) { return a + b; };
+    auto f = [a] (int b) { return a + b; }; // f stored a copy of a when we create it
+    a = 80; // a changed wont affect f
     cout << f(20) << endl;
 }
 
@@ -302,6 +303,18 @@ void ex10_19(const char* title){
     input.close();
 }
 
+void ex10_20(const char* title){
+    cout << "-----ex10.20-----" << endl;
+    ifstream input(title);
+    vector<string> v;
+    string s;
+    while(input >> s){
+        v.push_back(s);
+    }
+    auto cnt = count_if(v.begin(), v.end(), [] (const string &a) { return a.size() >= 6;});
+    cout << cnt << endl;
+    input.close();
+}
 
 int main(int argc, const char * argv[]) {
 //    ex10_1();
@@ -322,6 +335,7 @@ int main(int argc, const char * argv[]) {
 //    ex10_16(argv[1]);
 //    ex10_17(argv[2]);
 //    ex10_18(argv[1]);
-    ex10_19(argv[1]);
+//    ex10_19(argv[1]);
+    ex10_20(argv[1]);
     return 0;
 }
