@@ -9,6 +9,7 @@
 #include <iostream>
 #include <algorithm>
 #include <numeric>
+#include <functional>
 #include <vector>
 #include <list>
 #include <string>
@@ -28,6 +29,7 @@ using std::endl;
 using std::ostream;
 using std::ifstream;
 using std::istringstream;
+using namespace std::placeholders;
 
 void ex10_1(){
     cout << "-----ex10.1-----" << endl;
@@ -327,6 +329,23 @@ void ex10_21(){
     cout << num << endl;
 }
 
+bool check_size(const string& s, string::size_type sz){
+    return s.size() >= sz;
+}
+
+void ex10_22(const char* title){
+    cout << "-----ex10.22-----" << endl;
+    ifstream input(title);
+    vector<string> v;
+    string s;
+    while(input >> s){
+        v.push_back(s);
+    }
+    auto cnt = count_if(v.begin(), v.end(), bind(check_size, _1, 6));
+    cout << cnt << endl;
+    input.close();
+}
+
 int main(int argc, const char * argv[]) {
 //    ex10_1();
 //    ex10_2();
@@ -348,6 +367,7 @@ int main(int argc, const char * argv[]) {
 //    ex10_18(argv[1]);
 //    ex10_19(argv[1]);
 //    ex10_20(argv[1]);
-    ex10_21();
+//   ex10_21();
+    ex10_22(argv[1]);
     return 0;
 }
