@@ -346,6 +346,12 @@ void ex10_22(const char* title){
     input.close();
 }
 
+void ex10_23(){
+    //refer to https://github.com/Mooophy/Cpp-Primer/tree/master/ch10
+    cout << "-----ex10.23-----" << endl;
+    cout << "assume the old callable object has n parameters, then bind takes (n+1) arguments." << endl;
+}
+
 int main(int argc, const char * argv[]) {
 //    ex10_1();
 //    ex10_2();
@@ -368,6 +374,7 @@ int main(int argc, const char * argv[]) {
 //    ex10_19(argv[1]);
 //    ex10_20(argv[1]);
 //   ex10_21();
-    ex10_22(argv[1]);
+//    ex10_22(argv[1]);
+    ex10_23();
     return 0;
 }
