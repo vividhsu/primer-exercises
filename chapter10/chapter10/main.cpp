@@ -433,6 +433,14 @@ void ex10_28(){
     cout << endl;
 }
 
+void ex10_29(const char *title){
+    cout << "-----ex10.29-----" << endl;
+    ifstream in(title);
+    std::istream_iterator<string> in_iter(in), eof;
+    vector<string> vec(in_iter, eof);
+    printVec(cout, vec);
+}
+
 int main(int argc, const char * argv[]) {
 //    ex10_1();
 //    ex10_2();
@@ -461,6 +469,7 @@ int main(int argc, const char * argv[]) {
 //    ex10_25(argv[1]);
 //    ex10_26();
 //    ex10_27();
-    ex10_28();
+//    ex10_28();
+    ex10_29(argv[1]);
     return 0;
 }
