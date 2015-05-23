@@ -29,6 +29,8 @@ using std::endl;
 using std::ostream;
 using std::ifstream;
 using std::istringstream;
+using std::istream_iterator;
+using std::ostream_iterator;
 using namespace std::placeholders;
 
 
@@ -436,10 +438,29 @@ void ex10_28(){
 void ex10_29(const char *title){
     cout << "-----ex10.29-----" << endl;
     ifstream in(title);
-    std::istream_iterator<string> in_iter(in), eof;
+    istream_iterator<string> in_iter(in), eof;
     vector<string> vec(in_iter, eof);
     printVec(cout, vec);
 }
+
+void ex10_30(){
+    cout << "-----ex10.30-----" << endl;
+    istream_iterator<int> in_iter(cin), eof;
+    vector<int> vec(in_iter, eof);
+    sort(vec.begin(), vec.end());
+    ostream_iterator<int> out_iter(cout, " ");
+    copy(vec.begin(), vec.end(), out_iter);
+}
+
+void ex10_31(){
+    cout << "-----ex10.31-----" << endl;
+    istream_iterator<int> in_iter(cin), eof;
+    vector<int> vec(in_iter, eof);
+    sort(vec.begin(), vec.end());
+    ostream_iterator<int> out_iter(cout, " ");
+    unique_copy(vec.begin(), vec.end(), out_iter);
+}
+
 
 int main(int argc, const char * argv[]) {
 //    ex10_1();
@@ -470,6 +491,8 @@ int main(int argc, const char * argv[]) {
 //    ex10_26();
 //    ex10_27();
 //    ex10_28();
-    ex10_29(argv[1]);
+//    ex10_29(argv[1]);
+//    ex10_30();
+    ex10_31();
     return 0;
 }
