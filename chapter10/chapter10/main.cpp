@@ -486,6 +486,25 @@ void ex10_33(const char *in, const char *out_odd, const char *out_even){
     output_even.close();
 }
 
+void ex10_34(){
+    cout << "-----ex10.34-----" << endl;
+    vector<int> vec{1,2,3,4,5,6};
+    for(auto rev_iter = vec.crbegin(); rev_iter != vec.crend(); rev_iter++)
+        cout << *rev_iter << " ";
+    cout << endl;
+}
+
+void ex10_35(){
+    cout << "-----ex10.35-----" << endl;
+    vector<int> vec{1,2,3,4,5,6};
+    auto iter = vec.cend();
+    do{
+        --iter;
+        cout << *iter << " ";
+    }while (iter != vec.cbegin());
+    cout << endl;
+}
+
 int main(int argc, const char * argv[]) {
 //    ex10_1();
 //    ex10_2();
@@ -518,6 +537,8 @@ int main(int argc, const char * argv[]) {
 //    ex10_29(argv[1]);
 //    ex10_30();
 //    ex10_31();
-    ex10_33(argv[3], argv[4], argv[5]);
+//    ex10_33(argv[3], argv[4], argv[5]);
+//    ex10_34();
+    ex10_35();
     return 0;
 }
