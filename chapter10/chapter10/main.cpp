@@ -384,6 +384,12 @@ void ex10_25(const char* title){
     input.close();
 }
 
+void ex10_26(){
+    cout << "-----ex10.26-----" << endl;
+    cout << "back_inserter creates an iterator that uses push_back\n";
+    cout << "front_inserter creates an iterator that uses push_front\n";
+    cout << "inserter creates an iterator that uses insert" << endl;
+}
 
 int main(int argc, const char * argv[]) {
 //    ex10_1();
@@ -410,6 +416,7 @@ int main(int argc, const char * argv[]) {
 //    ex10_22(argv[1]);
 //    ex10_23();
 //    ex10_24();
-    ex10_25(argv[1]);
+//    ex10_25(argv[1]);
+    ex10_26();
     return 0;
 }
