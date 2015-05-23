@@ -391,6 +391,19 @@ void ex10_26(){
     cout << "inserter creates an iterator that uses insert" << endl;
 }
 
+void ex10_27(){
+    cout << "-----ex10.27-----" << endl;
+    vector<int> a = {1,2,2,4,6,6,1};
+    list<int> b;
+    unique_copy(a.begin(), a.end(), back_inserter(b));
+    for(auto iter = b.begin(); iter != b.end(); iter++){
+        cout << *iter << " ";
+    }
+    cout << endl;
+}
+
+
+
 int main(int argc, const char * argv[]) {
 //    ex10_1();
 //    ex10_2();
@@ -417,6 +430,7 @@ int main(int argc, const char * argv[]) {
 //    ex10_23();
 //    ex10_24();
 //    ex10_25(argv[1]);
-    ex10_26();
+//    ex10_26();
+    ex10_27();
     return 0;
 }
