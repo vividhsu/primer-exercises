@@ -402,7 +402,36 @@ void ex10_27(){
     cout << endl;
 }
 
-
+void ex10_28(){
+    cout << "-----ex10.28-----" << endl;
+    vector<int> a = {1,2,3,4,5,6,7,8,9};
+    cout << "vector a: ";
+    for(auto iter = a.begin(); iter != a.end(); iter++){
+        cout << *iter << " ";
+    }
+    cout << endl;
+    vector<int> b;
+    copy(a.begin(), a.end(), inserter(b, b.begin()));
+    cout << "vector b: ";
+    for(auto iter = b.begin(); iter != b.end(); iter++){
+        cout << *iter << " ";
+    }
+    cout << endl;
+    list<int> c;
+    copy(a.begin(), a.end(), back_inserter(c));
+    cout << "list c: ";
+    for(auto iter = c.begin(); iter != c.end(); iter++){
+        cout << *iter << " ";
+    }
+    cout << endl;
+    deque<int> d;
+    copy(a.begin(), a.end(), front_inserter(d));
+    cout << "deque d: ";
+    for(auto iter = d.begin(); iter != d.end(); iter++){
+        cout << *iter << " ";
+    }
+    cout << endl;
+}
 
 int main(int argc, const char * argv[]) {
 //    ex10_1();
@@ -431,6 +460,7 @@ int main(int argc, const char * argv[]) {
 //    ex10_24();
 //    ex10_25(argv[1]);
 //    ex10_26();
-    ex10_27();
+//    ex10_27();
+    ex10_28();
     return 0;
 }
