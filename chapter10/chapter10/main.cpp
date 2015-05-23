@@ -31,6 +31,7 @@ using std::ifstream;
 using std::istringstream;
 using namespace std::placeholders;
 
+
 void ex10_1(){
     cout << "-----ex10.1-----" << endl;
     vector<int> a = {10, 45, 56, 78, 10, 34, 23, 10, 10};
@@ -352,6 +353,18 @@ void ex10_23(){
     cout << "assume the old callable object has n parameters, then bind takes (n+1) arguments." << endl;
 }
 
+bool check_size2(const string &s, int i){
+    return s.size() < i;
+}
+
+void ex10_24(){
+    cout << "-----ex10.24-----" << endl;
+    vector<int> iv = {1,2,3,4,5,6,7};
+    string s = "abc";
+    auto iter = find_if(iv.cbegin(), iv.cend(), bind(check_size2, s, _1));
+    cout << *iter << endl;
+}
+
 int main(int argc, const char * argv[]) {
 //    ex10_1();
 //    ex10_2();
@@ -375,6 +388,7 @@ int main(int argc, const char * argv[]) {
 //    ex10_20(argv[1]);
 //   ex10_21();
 //    ex10_22(argv[1]);
-    ex10_23();
+//    ex10_23();
+    ex10_24();
     return 0;
 }
