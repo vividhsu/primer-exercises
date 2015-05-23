@@ -365,6 +365,26 @@ void ex10_24(){
     cout << *iter << endl;
 }
 
+void biggies4(vector<string> &words, vector<string>::size_type sz){
+    elimDups(words);
+    auto iter = partition(words.begin(), words.end(), bind(check_size2, _1, sz));
+    for_each(iter, words.end(), [](const string &s) {cout << s << " ";});
+    cout << endl;
+}
+
+void ex10_25(const char* title){
+    cout << "-----ex10.25-----" << endl;
+    ifstream input(title);
+    vector<string> v;
+    string s;
+    while(input >> s){
+        v.push_back(s);
+    }
+    biggies4(v, 4);
+    input.close();
+}
+
+
 int main(int argc, const char * argv[]) {
 //    ex10_1();
 //    ex10_2();
@@ -389,6 +409,7 @@ int main(int argc, const char * argv[]) {
 //   ex10_21();
 //    ex10_22(argv[1]);
 //    ex10_23();
-    ex10_24();
+//    ex10_24();
+    ex10_25(argv[1]);
     return 0;
 }
