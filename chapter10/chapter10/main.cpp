@@ -505,6 +505,24 @@ void ex10_35(){
     cout << endl;
 }
 
+void ex10_36(){
+    cout << "-----ex10.36-----" << endl;
+    vector<int> vec{0,1,0,9,8,0,4};
+    auto it = find(vec.crbegin(), vec.crend(), 0);
+    cout<< &(*it) << endl;
+    cout << &vec[0] << " " << &vec[2] <<" "<< &vec[5] << endl;
+}
+
+void ex10_37(){
+    cout << "-----ex10.37-----" << endl;
+    vector<int> vec{1,2,3,4,5,6,7,8,9,10};
+    list<int> lst;
+    copy(vec.crbegin()+3, vec.crend()-2, inserter(lst,lst.begin()));
+    for(auto iter = lst.begin(); iter != lst.end(); iter++)
+        cout << *iter << " ";
+    cout << endl;
+}
+
 int main(int argc, const char * argv[]) {
 //    ex10_1();
 //    ex10_2();
@@ -539,6 +557,8 @@ int main(int argc, const char * argv[]) {
 //    ex10_31();
 //    ex10_33(argv[3], argv[4], argv[5]);
 //    ex10_34();
-    ex10_35();
+//    ex10_35();
+//    ex10_36();
+    ex10_37();
     return 0;
 }
