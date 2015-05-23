@@ -10,6 +10,7 @@
 		5E3BF8E01B07D15D00EFBC4A /* input_10_11.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5E3BF8DE1B07D13100EFBC4A /* input_10_11.txt */; };
 		5E3BF8E11B07D16300EFBC4A /* input_10_9.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5E3BF8DD1B07D10100EFBC4A /* input_10_9.txt */; };
 		5E744D0C1B055AB80058BBEC /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E744D0B1B055AB80058BBEC /* main.cpp */; };
+		5EE249171B112CA30099C3DE /* input_10_33.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5EE249161B112C880099C3DE /* input_10_33.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -19,6 +20,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				5EE249171B112CA30099C3DE /* input_10_33.txt in CopyFiles */,
 				5E3BF8E11B07D16300EFBC4A /* input_10_9.txt in CopyFiles */,
 				5E3BF8E01B07D15D00EFBC4A /* input_10_11.txt in CopyFiles */,
 			);
@@ -32,6 +34,7 @@
 		5E3BF8E21B07D18E00EFBC4A /* Sales_data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sales_data.h; sourceTree = "<group>"; };
 		5E744D081B055AB80058BBEC /* chapter10 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = chapter10; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E744D0B1B055AB80058BBEC /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		5EE249161B112C880099C3DE /* input_10_33.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = input_10_33.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,7 @@
 				5E3BF8DE1B07D13100EFBC4A /* input_10_11.txt */,
 				5E3BF8DD1B07D10100EFBC4A /* input_10_9.txt */,
 				5E744D0B1B055AB80058BBEC /* main.cpp */,
+				5EE249161B112C880099C3DE /* input_10_33.txt */,
 			);
 			path = chapter10;
 			sourceTree = "<group>";

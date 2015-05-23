@@ -28,6 +28,7 @@ using std::cout;
 using std::endl;
 using std::ostream;
 using std::ifstream;
+using std::ofstream;
 using std::istringstream;
 using std::istream_iterator;
 using std::ostream_iterator;
@@ -441,6 +442,7 @@ void ex10_29(const char *title){
     istream_iterator<string> in_iter(in), eof;
     vector<string> vec(in_iter, eof);
     printVec(cout, vec);
+    in.close();
 }
 
 void ex10_30(){
@@ -461,6 +463,28 @@ void ex10_31(){
     unique_copy(vec.begin(), vec.end(), out_iter);
 }
 
+void ex10_33(const char *in, const char *out_odd, const char *out_even){
+    cout << "-----ex10.33-----" << endl;
+    ifstream input(in);
+    ofstream output_odd(out_odd);
+    ofstream output_even(out_even);
+    istream_iterator<int> in_iter(input), eof;
+    ostream_iterator<int> out_iter_odd(output_odd, " ");
+    ostream_iterator<int> out_iter_even(output_even, "\n");
+    vector<int> vec(in_iter, eof);
+    for(auto iter = vec.begin(); iter != vec.end(); iter++){
+        if((*iter) % 2 != 0){
+            *out_iter_odd++ = *iter;
+        }
+        else{
+            *out_iter_even++ = *iter;
+        }
+    }
+    
+    input.close();
+    output_odd.close();
+    output_even.close();
+}
 
 int main(int argc, const char * argv[]) {
 //    ex10_1();
@@ -493,6 +517,7 @@ int main(int argc, const char * argv[]) {
 //    ex10_28();
 //    ex10_29(argv[1]);
 //    ex10_30();
-    ex10_31();
+//    ex10_31();
+    ex10_33(argv[3], argv[4], argv[5]);
     return 0;
 }
