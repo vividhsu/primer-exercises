@@ -523,6 +523,38 @@ void ex10_37(){
     cout << endl;
 }
 
+void ex10_38(){
+    cout << "-----ex10.38-----" << endl;
+    cout << "input iterator: 1. equality and ineuqality operation(==, !=);\n";
+    cout << "                2. prefix and postfix increment(++);\n";
+    cout << "                3. dereference operation(*);\n";
+    cout << "                4. arrow operation(->).\n";
+    cout << "output iterator: 1. prefix and postfix increment(++);\n";
+    cout << "                 2. dereference operation(*).\n";
+    cout << "forward iterator: 1. equality and ineuqality operation(==, !=);\n";
+    cout << "                  2. prefix and postfix increment(++);\n";
+    cout << "                  3. dereference operation(*);\n";
+    cout << "                  4. arrow operation(->).\n";
+    cout << "                  5. read or write the same element mutiple times.\n";
+    cout << "bidiretional iterator: 1. equality and ineuqality operation(==, !=);\n";
+    cout << "                       2. prefix and postfix increment(++);\n";
+    cout << "                       3. prefix and postfix decrement(++);\n";
+    cout << "                       4. dereference operation(*);\n";
+    cout << "                       5. arrow operation(->).\n";
+    cout << "                       6. read or write the same element mutiple times.\n";
+    cout << "random-access iterator: 1. equality and ineuqality operation(==, !=);\n";
+    cout << "                        2. prefix and postfix increment(++);\n";
+    cout << "                        3. prefix and postfix decrement(++);\n";
+    cout << "                        4. dereference operation(*);\n";
+    cout << "                        5. arrow operation(->).\n";
+    cout << "                        6. read or write the same element mutiple times;\n";
+    cout << "                        7. relational opreation(<, <=, >, >=);\n";
+    cout << "                        8. addition and subtraction opeation (+, +=, -, -=);\n";
+    cout << "                        9. subtration(-) applied to two iterators;\n";
+    cout << "                        10. subscript operation(iter[n]).";
+    cout << endl;
+}
+
 int main(int argc, const char * argv[]) {
 //    ex10_1();
 //    ex10_2();
@@ -559,6 +591,7 @@ int main(int argc, const char * argv[]) {
 //    ex10_34();
 //    ex10_35();
 //    ex10_36();
-    ex10_37();
+//    ex10_37();
+    ex10_38();
     return 0;
 }
