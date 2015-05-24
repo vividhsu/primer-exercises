@@ -575,6 +575,26 @@ void ex10_41(){
     cout << "replace_copy_if(beg, end, dest, pred, new_val): copies the elements in range [beg, end) to the beginning at dest, replacing those for which pred returns true by new_val." << endl;
 }
 
+void elimDups2(list<string> &words){
+    words.sort();
+    words.unique();
+}
+
+void ex10_42(const char* title){
+    cout << "-----ex10.42-----" << endl;
+    ifstream input(title);
+    list<string> a;
+    string b;
+    while(input >> b){
+        a.push_back(b);
+    }
+    elimDups2(a);
+    for(auto iter = a.begin(); iter != a.end(); iter++){
+        cout << *iter << " ";
+    }
+    cout << endl;
+    input.close();
+}
 
 
 int main(int argc, const char * argv[]) {
@@ -617,6 +637,7 @@ int main(int argc, const char * argv[]) {
 //    ex10_38();
 //    ex10_39();
 //    ex10_40();
-    ex10_41();
+//    ex10_41();
+    ex10_42(argv[1]);
     return 0;
 }
