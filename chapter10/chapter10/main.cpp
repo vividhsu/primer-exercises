@@ -555,6 +555,18 @@ void ex10_38(){
     cout << endl;
 }
 
+void ex10_39(){
+    cout << "-----ex10.39-----" << endl;
+    cout << "list has bidirectional iterator, vector has random-access and bidirectional iterator" << endl;
+}
+
+void ex10_40(){
+    cout << "-----ex10.40-----" << endl;
+    cout << "template <class InputIterator, class OutputIterator> OutputIterator copy (InputIterator first, InputIterator last, OutputIterator result);\n";
+    cout << "template <class BidirectionalIterator> void reverse (BidirectionalIterator first, BidirectionalIterator last);\n";
+    cout << "template <class ForwardIterator> ForwardIterator unique (ForwardIterator first, ForwardIterator last);" << endl;
+}
+
 int main(int argc, const char * argv[]) {
 //    ex10_1();
 //    ex10_2();
@@ -592,6 +604,8 @@ int main(int argc, const char * argv[]) {
 //    ex10_35();
 //    ex10_36();
 //    ex10_37();
-    ex10_38();
+//    ex10_38();
+//    ex10_39();
+    ex10_40();
     return 0;
 }
