@@ -567,6 +567,16 @@ void ex10_40(){
     cout << "template <class ForwardIterator> ForwardIterator unique (ForwardIterator first, ForwardIterator last);" << endl;
 }
 
+void ex10_41(){
+    cout << "-----ex10.41-----" << endl;
+    cout << "replace(beg, end, old_val, new_val): assigns new_val to all elements in range [beg, end) that compare equal to old_val. \n";
+    cout << "replace_if(beg, end, pred, new_val): assigns new_val to all elements in range [beg, end) for which pred returns true. \n";
+    cout << "replace_copy(beg, end, dest, old_val, new_val): copies the elements in range [beg, end) to the beginning at dest, replacing the appearances of old_val by new_val. \n";
+    cout << "replace_copy_if(beg, end, dest, pred, new_val): copies the elements in range [beg, end) to the beginning at dest, replacing those for which pred returns true by new_val." << endl;
+}
+
+
+
 int main(int argc, const char * argv[]) {
 //    ex10_1();
 //    ex10_2();
@@ -606,6 +616,7 @@ int main(int argc, const char * argv[]) {
 //    ex10_37();
 //    ex10_38();
 //    ex10_39();
-    ex10_40();
+//    ex10_40();
+    ex10_41();
     return 0;
 }
