@@ -11,6 +11,7 @@
 #include <set>
 #include <string>
 #include <fstream>
+#include <algorithm>
 
 
 using std::cout;
@@ -20,6 +21,7 @@ using std::map;
 using std::set;
 using std::string;
 using std::ifstream;
+using std::remove_if;
 
 void ex11_1(){
     cout << "-----ex11.1-----" << endl;
@@ -50,10 +52,30 @@ void ex11_3(const char *title){
     input.close();
 }
 
+void ex11_4(const char *title){
+    //refer to https://github.com/Mooophy/Cpp-Primer/blob/master/ch11/ex11_3_4.cpp
+    cout << "-----ex11.4-----" << endl;
+    map<string, size_t> counter;
+    ifstream input(title);
+    string word;
+    while (input >> word){
+        for (auto &c: word)
+            c = tolower(c);
+        word.erase(remove_if(word.begin(), word.end(), ispunct),word.end());
+        ++counter[word];
+    }
+    for (auto &c: counter){
+        cout << c.first << " occurs " << c.second << ((c.second > 1) ? " times" : " time") <<endl;
+    }
+    input.close();
+}
+
+
+
 int main(int argc, const char * argv[]) {
-    //    ex11_1();
-    //    ex11_2();
-    ex11_3(argv[1]);
-    
+//    ex11_1();
+//    ex11_2();
+//    ex11_3(argv[1]);
+    ex11_4(argv[1]);
     return 0;
 }

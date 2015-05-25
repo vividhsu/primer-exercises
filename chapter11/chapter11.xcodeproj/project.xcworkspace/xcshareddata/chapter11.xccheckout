@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>4CFABCAA-5458-464D-B110-DBB90003A823</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>chapter11</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>91C2B70A5F8078B571EC8CC9DBA218F54CB4400E</key>
 		<string>https://github.com/vividhsu/primer-exercises.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>chapter11/chapter11.xcodeproj/project.xcworkspace</string>
+	<string>chapter11/chapter11.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>91C2B70A5F8078B571EC8CC9DBA218F54CB4400E</key>
