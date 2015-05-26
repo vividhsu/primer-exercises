@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5E3D83511B12A6FA00FACBAD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D83501B12A6FA00FACBAD /* main.cpp */; };
 		5E3D83581B12A74A00FACBAD /* input_11_3.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5E3D83571B12A72700FACBAD /* input_11_3.txt */; };
+		5E3D835A1B14F43100FACBAD /* input_11_7.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5E3D83591B14F42800FACBAD /* input_11_7.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -18,6 +19,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				5E3D835A1B14F43100FACBAD /* input_11_7.txt in CopyFiles */,
 				5E3D83581B12A74A00FACBAD /* input_11_3.txt in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -28,6 +30,7 @@
 		5E3D834D1B12A6FA00FACBAD /* chapter11 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = chapter11; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E3D83501B12A6FA00FACBAD /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		5E3D83571B12A72700FACBAD /* input_11_3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = input_11_3.txt; sourceTree = "<group>"; };
+		5E3D83591B14F42800FACBAD /* input_11_7.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = input_11_7.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,7 @@
 			children = (
 				5E3D83571B12A72700FACBAD /* input_11_3.txt */,
 				5E3D83501B12A6FA00FACBAD /* main.cpp */,
+				5E3D83591B14F42800FACBAD /* input_11_7.txt */,
 			);
 			path = chapter11;
 			sourceTree = "<group>";
@@ -239,6 +243,7 @@
 				5E3D83561B12A6FA00FACBAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

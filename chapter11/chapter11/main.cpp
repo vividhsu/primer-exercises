@@ -12,6 +12,8 @@
 #include <string>
 #include <fstream>
 #include <algorithm>
+#include <vector>
+#include <sstream>
 
 
 using std::cout;
@@ -22,6 +24,9 @@ using std::set;
 using std::string;
 using std::ifstream;
 using std::remove_if;
+using std::vector;
+using std::istringstream;
+
 
 void ex11_1(){
     cout << "-----ex11.1-----" << endl;
@@ -70,12 +75,59 @@ void ex11_4(const char *title){
     input.close();
 }
 
+void ex11_5(){
+    cout << "-----ex10.5-----" << endl;
+    cout << "map contains key and value, set only contains key. \n";
+    cout << "if we need both key and value, choose map, otherwise, choose set" << endl;
+}
 
+void ex11_6(){
+    cout << "-----ex10.6-----" << endl;
+    cout << "set has unique key. list may have duplicate values." << endl;
+}
+
+void ex11_7(const char* title){
+    cout << "-----ex10.7-----" << endl;
+    map<string, vector<string>> names;
+    ifstream input(title);
+    string line;
+    while (getline(input, line)){
+        istringstream words(line);
+        string lastName;
+        words >> lastName;
+        vector<string> firstName;
+        string name;
+        while(words >> name){
+            firstName.push_back(name);
+        }
+        if (names.find(lastName) == names.end()){
+            names.insert({lastName, firstName});
+        }
+    }
+    for (auto &l: names) {
+        cout << l.first << ": ";
+        for(auto &c: l.second){
+            cout << c << " ";
+        }
+        cout <<"\n";
+    }
+    cout << endl;
+    input.close();
+}
+
+void ex11_8(){
+    cout << "-----ex10.8-----" << endl;
+    cout << "set is unique and ordered." << endl;
+}
 
 int main(int argc, const char * argv[]) {
 //    ex11_1();
 //    ex11_2();
 //    ex11_3(argv[1]);
-    ex11_4(argv[1]);
+//    ex11_4(argv[1]);
+//    ex11_5();
+//    ex11_6();
+//    ex11_7(argv[2]);
+    ex11_8();
     return 0;
 }
