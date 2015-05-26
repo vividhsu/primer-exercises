@@ -31,6 +31,7 @@
 		5E3D83501B12A6FA00FACBAD /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		5E3D83571B12A72700FACBAD /* input_11_3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = input_11_3.txt; sourceTree = "<group>"; };
 		5E3D83591B14F42800FACBAD /* input_11_7.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = input_11_7.txt; sourceTree = "<group>"; };
+		5E3D835B1B1504CB00FACBAD /* Sales_data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sales_data.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +66,7 @@
 			children = (
 				5E3D83571B12A72700FACBAD /* input_11_3.txt */,
 				5E3D83501B12A6FA00FACBAD /* main.cpp */,
+				5E3D835B1B1504CB00FACBAD /* Sales_data.h */,
 				5E3D83591B14F42800FACBAD /* input_11_7.txt */,
 			);
 			path = chapter11;

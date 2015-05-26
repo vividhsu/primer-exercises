@@ -14,7 +14,9 @@
 #include <algorithm>
 #include <vector>
 #include <sstream>
+#include <list>
 
+#include "Sales_data.h"
 
 using std::cout;
 using std::cin;
@@ -26,6 +28,8 @@ using std::ifstream;
 using std::remove_if;
 using std::vector;
 using std::istringstream;
+using std::list;
+using std::multiset;
 
 
 void ex11_1(){
@@ -120,6 +124,25 @@ void ex11_8(){
     cout << "set is unique and ordered." << endl;
 }
 
+void ex11_9(){
+    cout << "-----ex10.9-----" << endl;
+    map<string, list<string::size_type>> smap;
+}
+
+void ex11_10(){
+    //ref to https://github.com/Mooophy/Cpp-Primer/blob/master/ch11/ex11_9_10.cpp
+    cout << "-----ex10.10-----" << endl;
+    map<vector<int>::iterator, int> vmap;
+    map<list<int>::iterator, int> lmap;
+    cout << "vector iterator is random-access iterator, has < operation; \n";
+    cout << "list iterator is bidirectional iterator, no < operation" << endl;
+}
+
+void ex11_11(){
+    cout << "-----ex10.11-----" << endl;
+    multiset<Sales_data, bool (*)(const Sales_data&, const Sales_data&)> bookstore(compareIsbn);
+}
+
 int main(int argc, const char * argv[]) {
 //    ex11_1();
 //    ex11_2();
@@ -128,6 +151,9 @@ int main(int argc, const char * argv[]) {
 //    ex11_5();
 //    ex11_6();
 //    ex11_7(argv[2]);
-    ex11_8();
+//    ex11_8();
+//    ex11_9();
+//    ex11_10();
+    ex11_11();
     return 0;
 }
