@@ -10,6 +10,7 @@
 		5E3D83511B12A6FA00FACBAD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D83501B12A6FA00FACBAD /* main.cpp */; };
 		5E3D83581B12A74A00FACBAD /* input_11_3.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5E3D83571B12A72700FACBAD /* input_11_3.txt */; };
 		5E3D835A1B14F43100FACBAD /* input_11_7.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5E3D83591B14F42800FACBAD /* input_11_7.txt */; };
+		5E3D835D1B150FD200FACBAD /* input_11_14.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5E3D835C1B150E4200FACBAD /* input_11_14.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -19,6 +20,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				5E3D835D1B150FD200FACBAD /* input_11_14.txt in CopyFiles */,
 				5E3D835A1B14F43100FACBAD /* input_11_7.txt in CopyFiles */,
 				5E3D83581B12A74A00FACBAD /* input_11_3.txt in CopyFiles */,
 			);
@@ -32,6 +34,7 @@
 		5E3D83571B12A72700FACBAD /* input_11_3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = input_11_3.txt; sourceTree = "<group>"; };
 		5E3D83591B14F42800FACBAD /* input_11_7.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = input_11_7.txt; sourceTree = "<group>"; };
 		5E3D835B1B1504CB00FACBAD /* Sales_data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sales_data.h; sourceTree = "<group>"; };
+		5E3D835C1B150E4200FACBAD /* input_11_14.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = input_11_14.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,7 @@
 				5E3D83501B12A6FA00FACBAD /* main.cpp */,
 				5E3D835B1B1504CB00FACBAD /* Sales_data.h */,
 				5E3D83591B14F42800FACBAD /* input_11_7.txt */,
+				5E3D835C1B150E4200FACBAD /* input_11_14.txt */,
 			);
 			path = chapter11;
 			sourceTree = "<group>";
