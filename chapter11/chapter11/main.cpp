@@ -314,6 +314,24 @@ void ex11_23(const char* title){
     input.close();
 }
 
+void ex11_24(){
+    cout << "-----ex11.24-----" << endl;
+    map<int, int> m;
+    m[0] = 1;
+    cout << "search if m contains key 0, because m is empty, insert {0,0} to m, assign value 1 to key 0." <<endl;
+}
+
+void ex11_25(){
+    cout << "-----ex11.25-----" << endl;
+    cout << "Unlike map, if vector is empty, we can't subscript it." << endl;
+}
+
+void ex11_26(){
+    cout << "-----ex11.26-----" << endl;
+    cout << "key_type can be used to subscript a map;\n";
+    cout << "mapped_type is the map return type." << endl;
+}
+
 
 int main(int argc, const char * argv[]) {
 //    ex11_1();
@@ -338,5 +356,8 @@ int main(int argc, const char * argv[]) {
 //    ex11_21();
 //    ex11_22();
 //    ex11_23(argv[2]);
+//    ex11_24();
+//    ex11_25();
+//    ex11_26();
     return 0;
 }
