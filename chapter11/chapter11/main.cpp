@@ -32,6 +32,7 @@ using std::istringstream;
 using std::list;
 using std::multiset;
 using std::pair;
+using std::multimap;
 
 
 void ex11_1(){
@@ -256,6 +257,64 @@ void ex11_19(){
     cout << "multiset<Sales_data, bool (*)(const Sales_data&, const Sales_data&)>::iterator set_it = bookstore.begin();" <<endl;
 }
 
+void ex11_20(const char* title){
+    cout << "-----ex11.20-----" << endl;
+    ifstream input(title);
+    map<string, size_t> word_count;
+    string word;
+    while (input >> word){
+        auto ret = word_count.insert({word, 1});
+        if (!ret.second) {
+            ++ret.first -> second;
+        }
+    }
+    for (auto &c: word_count){
+        cout << c.first << " occurs " << c.second << ((c.second > 1) ? " times" : " time") <<endl;
+    }
+    input.close();
+}
+
+void ex11_21(){
+    cout << "-----ex11.21-----" << endl;
+/**   
+    map<string, size_t> word_count;
+    string word;
+    while (cin >> word){
+        ++word_count.insert({word,0}).first->second;
+    }
+*/
+    cout << "insert {word, 0} to the map, if map already has word, increase the count" << endl;
+}
+
+void ex11_22(){
+    cout << "-----ex11.22-----" << endl;
+    map<string, vector<int>> smap;
+    pair<map<string, vector<int>>::iterator, bool> ret = smap.insert({"abc", {1,2,3}});
+    cout << ret.second << endl;
+}
+
+void ex11_23(const char* title){
+    cout << "-----ex11.23-----" << endl;
+    multimap<string, string> families;
+    ifstream input(title);
+    string line;
+    while (getline(input, line)){
+        istringstream words(line);
+        string lastName;
+        words >> lastName;
+        string firstName;
+        while(words >> firstName){
+            families.insert({lastName, firstName});
+        }
+    }
+    for (auto &f: families) {
+        cout << f.first << " " << f.second << "\n";
+    }
+    cout << endl;
+    input.close();
+}
+
+
 int main(int argc, const char * argv[]) {
 //    ex11_1();
 //    ex11_2();
@@ -274,6 +333,10 @@ int main(int argc, const char * argv[]) {
 //    ex11_16();
 //    ex11_17();
 //    ex11_18();
-    ex11_19();
+//    ex11_19();
+//    ex11_20(argv[1]);
+//    ex11_21();
+//    ex11_22();
+//    ex11_23(argv[2]);
     return 0;
 }
