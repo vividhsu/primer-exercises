@@ -143,6 +143,7 @@ void ex11_10(){
 void ex11_11(){
     cout << "-----ex10.11-----" << endl;
     multiset<Sales_data, bool (*)(const Sales_data&, const Sales_data&)> bookstore(compareIsbn);
+    cout << "multiset<Sales_data, bool (*)(const Sales_data&, const Sales_data&)> bookstore(compareIsbn);" <<endl;
 }
 
 void ex11_12_13(){
@@ -191,6 +192,70 @@ void ex11_14(const char* title){
     input.close();
 }
 
+void ex11_15(){
+    cout << "-----ex11.15-----" << endl;
+    cout << "a map from int to vector<int>: ";
+    cout << "map<int, vector<int>> imap;\n";
+    cout << "mapped type is vector<int>\n";
+    cout << "key type is int\n";
+    cout << "value_type is pair<int, vector<int>>" << endl;
+}
+
+void ex11_16(){
+    cout << "-----ex11.16-----" << endl;
+    map<string, std::size_t> word_cout{{"word", 4}};
+    auto map_it = word_cout.begin();
+    map_it -> second = 5;
+    cout << map_it -> first << " " << map_it -> second << endl;
+}
+
+void ex11_17(){
+    cout << "-----ex11.17-----" << endl;
+    multiset<string> c1, c2, c3={"a", "an", "the"}, c4={"a", "an", "the"};
+    vector<string> v1={"a", "an", "the"}, v2={"a", "an", "the"}, v3, v4;
+    //legal
+    copy(v1.begin(), v1.end(), inserter(c1, c1.end()));
+    //illegal, mutliset doesn't have push_back
+//    copy(v2.begin(), v2.end(), back_inserter(c2));
+    //legal
+    copy(c3.begin(), c3.end(), inserter(v3, v3.end()));
+    //legal
+    copy(c4.begin(), c4.end(), back_inserter(v4));
+    for (auto &i: c1){
+        cout << i << " ";
+    }
+    cout << endl;
+    for (auto &i: c2){
+        cout << i << " ";
+    }
+    cout << endl;
+    for (auto &i: v3){
+        cout << i << " ";
+    }
+    cout << endl;
+    for (auto &i: v4){
+        cout << i << " ";
+    }
+    cout << endl;
+}
+
+void ex11_18(){
+    cout << "-----ex11.18-----" << endl;
+    map<string, std::size_t> word_cout;
+    map<string, std::size_t>::iterator map_it = word_cout.begin();
+    
+    cout << "map<string, size_t> word_cout;\n";
+    cout << "map<string, std::size_t>::iterator map_it = word_cout.begin();" << endl;
+}
+
+void ex11_19(){
+    cout << "-----ex11.19-----" << endl;
+    multiset<Sales_data, bool (*)(const Sales_data&, const Sales_data&)> bookstore(compareIsbn);
+    multiset<Sales_data, bool (*)(const Sales_data&, const Sales_data&)>::iterator set_it = bookstore.begin();
+    cout << "multiset<Sales_data, bool (*)(const Sales_data&, const Sales_data&)> bookstore(compareIsbn);\n";
+    cout << "multiset<Sales_data, bool (*)(const Sales_data&, const Sales_data&)>::iterator set_it = bookstore.begin();" <<endl;
+}
+
 int main(int argc, const char * argv[]) {
 //    ex11_1();
 //    ex11_2();
@@ -204,6 +269,11 @@ int main(int argc, const char * argv[]) {
 //    ex11_10();
 //    ex11_11();
 //    ex11_12_13();
-    ex11_14(argv[3]);
+//    ex11_14(argv[3]);
+//    ex11_15();
+//    ex11_16();
+//    ex11_17();
+//    ex11_18();
+    ex11_19();
     return 0;
 }
