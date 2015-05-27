@@ -332,6 +332,89 @@ void ex11_26(){
     cout << "mapped_type is the map return type." << endl;
 }
 
+void ex11_27(){
+    cout << "-----ex11.27-----" << endl;
+    cout << "if I only need to find out whether the key is present, I can use count;\n";
+    cout << "if I need to know the position of the key, I can use find" << endl;
+}
+
+void ex11_28(){
+    cout << "-----ex11.28-----" << endl;
+    map<string, vector<int>> m{{"aaa", {1,2,3}}, {"bb", {4,5}}};
+    map<string, vector<int>>::iterator iter = m.find("bb");
+    cout << iter -> first <<": ";
+    for (auto &i: iter -> second){
+        cout << i << " ";
+    }
+    cout << endl;
+}
+
+void ex11_29(){
+    cout << "-----ex11.29-----" << endl;
+    cout << "if a key k is not in the container:\n";
+    cout << "lower_bound returns the iterator which the key is greater than k.\n";
+    cout << "upper_bound returns the iterator which the key is greater than k.\n";
+    cout << "equal_range returns a pair of <iterator, iterator>, both iterator points to the key greater than k.\n";
+    cout << "lower_bound and upper_bound point to the same key." << endl;
+}
+
+void ex11_30(){
+    cout << "-----ex11.30-----" << endl;
+    multimap<string, string> authors;
+    string search_item;
+    for (auto pos = authors.equal_range(search_item); pos.first != pos.second; ++pos.first)
+        cout << pos.first -> second << endl;
+    cout << "pos.first -> second means the lower_bound item's value" << endl;
+}
+
+void ex11_31(){
+    cout << "-----ex11.31-----" << endl;
+    multimap<string, string> authors{{"AA", "aaaa"},{"CC", "cccc"},{"AA", "bbb"},{"DD", "eee"},{"CC", "vvv"}};
+    for (auto &author: authors) {
+        cout << author.first << ": " << author.second << "\n";
+    }
+    string search_item = "AA";
+    auto iter = authors.find(search_item);
+    auto cnt = authors.count(search_item);
+    while (cnt){
+        auto iter1 = iter;
+        iter1++;
+        authors.erase(iter);
+        --cnt;
+        iter = iter1;
+    }
+    cout << "after erase:\n";
+    for (auto &author: authors) {
+        cout << author.first << ": " << author.second << "\n";
+    }
+    cout << endl;
+}
+
+void ex11_32(){
+    // refer to https://github.com/Mooophy/Cpp-Primer/blob/master/ch11/ex11_32.cpp
+    cout << "-----ex11.32-----" << endl;
+    multimap<string, string> authors{{"AA", "b"},{"CC", "xxx"},{"AA", "a"},{"DD", "eee"},{"CC", "vvv"}};
+    for (auto &author: authors) {
+        cout << author.first << ": " << author.second << "\n";
+    }
+    map<string, multiset<string>> order_authors;
+    for (auto &author: authors){
+        //order_authors[author.first] is the mapped type of order_authors, which is multiset<string>
+        //.insert(author.second) insert the value type of multiset<string>, which is string
+        order_authors[author.first].insert(author.second);
+    }
+
+    cout << "after reorganize:\n";
+    for (auto &author: order_authors) {
+        cout << author.first << ": ";
+        for (auto &c: author.second){
+            cout << c << " ";
+        }
+        cout << "\n";
+    }
+    cout << endl;
+}
+
 
 int main(int argc, const char * argv[]) {
 //    ex11_1();
@@ -359,5 +442,11 @@ int main(int argc, const char * argv[]) {
 //    ex11_24();
 //    ex11_25();
 //    ex11_26();
+//    ex11_27();
+//    ex11_28();
+//    ex11_29();
+//    ex11_30();
+//    ex11_31();
+//    ex11_32();
     return 0;
 }
