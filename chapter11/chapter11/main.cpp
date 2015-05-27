@@ -16,6 +16,7 @@
 #include <sstream>
 #include <list>
 #include <utility>
+#include <exception>
 
 #include "Sales_data.h"
 
@@ -415,6 +416,124 @@ void ex11_32(){
     cout << endl;
 }
 
+map<string, string> buildMap(ifstream &map_file){
+    map<string, string> trans_map;
+    string key;
+    string value;
+    while (map_file >> key && getline(map_file, value)) {
+        if (value.size() > 1) {
+            trans_map[key] = value.substr(1);
+        }
+        else
+            throw std::runtime_error("no rule for " + key);
+    }
+    return trans_map;
+}
+
+const string& transform(const string &word, map<string, string> &trans_map){
+    auto iter = trans_map.find(word);
+    if (iter != trans_map.end()) {
+        return iter -> second;
+    }
+    else{
+        return word;
+    }
+}
+
+void word_transform(ifstream &map_file, ifstream &input){
+    auto trans_map = buildMap(map_file);
+    string text;
+    while (getline(input, text)) {
+        istringstream stream(text);
+        string word;
+        bool isFirst = true;
+        while (stream >> word) {
+            if(isFirst){
+                isFirst = false;
+            }
+            else{
+                cout << " ";
+            }
+            cout << transform(word, trans_map);
+        }
+        cout << endl;
+    }
+}
+
+void ex11_33(const char* title1, const char* title2){
+    cout << "-----ex11.33-----" << endl;
+    ifstream map_file(title1);
+    ifstream input(title2);
+    word_transform(map_file, input);
+    map_file.close();
+    input.close();
+}
+
+void ex11_34(){
+    cout << "-----ex11.34-----" << endl;
+    cout << "if key is not in the map, subscript will adds the key to the map." << endl;
+}
+
+void ex11_35(){
+    cout << "-----ex11.35-----" << endl;
+    cout << "if the key is already there, it won't overwrite the value." << endl;
+}
+
+map<string, string> buildMap1(ifstream &map_file){
+    map<string, string> trans_map;
+    string key;
+    string value;
+    while (map_file >> key && getline(map_file, value)) {
+        value = value.substr(1);
+        if (value.size() > 1) {
+            trans_map[key] = value;
+        }
+        else
+            throw std::runtime_error("no rule for " + key);
+    }
+    return trans_map;
+}
+
+const string& transform1(const string &word, map<string, string> &trans_map){
+    auto iter = trans_map.find(word);
+    if (iter != trans_map.end()) {
+        return iter -> second;
+    }
+    else{
+        return word;
+    }
+}
+
+void word_transform1(ifstream &map_file, ifstream &input){
+    auto trans_map = buildMap1(map_file);
+    string text;
+    while (getline(input, text)) {
+        istringstream stream(text);
+        string word;
+        bool isFirst = true;
+        while (stream >> word) {
+            if(isFirst){
+                isFirst = false;
+            }
+            else{
+                cout << " ";
+            }
+            cout << transform1(word, trans_map);
+        }
+        cout << endl;
+    }
+}
+
+void ex11_36(const char* title1, const char* title2){
+    cout << "-----ex11.36-----" << endl;
+    ifstream map_file(title1);
+    ifstream input(title2);
+    word_transform1(map_file, input);
+    map_file.close();
+    input.close();
+}
+
+
 
 int main(int argc, const char * argv[]) {
 //    ex11_1();
@@ -448,5 +567,9 @@ int main(int argc, const char * argv[]) {
 //    ex11_30();
 //    ex11_31();
 //    ex11_32();
+//    ex11_33(argv[4], argv[5]);
+//    ex11_34();
+//    ex11_35();
+//    ex11_36(argv[6], argv[5]);
     return 0;
 }
