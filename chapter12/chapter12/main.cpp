@@ -9,6 +9,9 @@
 #include <iostream>
 #include <vector>
 #include <memory>
+#include <fstream>
+
+#include "strBlob.h"
 
 using std::cout;
 using std::cin;
@@ -17,6 +20,7 @@ using std::vector;
 using std::shared_ptr;
 using std::make_shared;
 using std::unique_ptr;
+using std::ifstream;
 
 void ex12_1(){
     cout << "-----ex12.1-----" << endl;
@@ -193,7 +197,34 @@ void ex12_18(){
     cout << "shared_ptr may have more than one smart pointers point to the same memory. if we release the memory to another shared_ptr, we still have other shared_ptr point to the memory. " << endl;
 }
 
+void ex12_19(){
+    cout << "-----ex12.19-----" << endl;
+}
 
+void ex12_20(const char* title){
+    cout << "-----ex12.20-----" << endl;
+    ifstream input(title);
+    string line;
+    strBlob blob;
+    while (getline(input, line)){
+        blob.push_back(line);
+    }
+    for (strBlobPtr pbeg(blob.begin()), pend(blob.end()); neq(pbeg, pend); pbeg.incr()) {
+        cout << pbeg.deref() << " ";
+    }
+    cout << endl;
+    input.close();
+}
+
+void ex12_21(){
+    cout << "-----ex12.21-----" << endl;
+    /**
+     string& deref() const {
+         return (*check(curr, "dereference past end"))[curr];
+     }
+    */
+    cout << "original one is better, because if check returns a null pointer, we could not do subscript operation to what it points" << endl;
+}
 
 int main(int argc, const char * argv[]) {
 //    ex12_1();
@@ -208,8 +239,10 @@ int main(int argc, const char * argv[]) {
 //    ex12_11();
 //    ex12_12();
 //    ex12_13();
-    ex12_16();
-    ex12_17();
-    ex12_18();
+//    ex12_16();
+//    ex12_17();
+//    ex12_18();
+//    ex12_20(argv[1]);
+    ex12_21();
     return 0;
 }
