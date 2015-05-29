@@ -16,6 +16,7 @@ using std::endl;
 using std::vector;
 using std::shared_ptr;
 using std::make_shared;
+using std::unique_ptr;
 
 void ex12_1(){
     cout << "-----ex12.1-----" << endl;
@@ -165,6 +166,35 @@ void ex12_13(){
     cout << "sp becomes a dangling pointer because compile free the memory where p points, which also is where sp points." << endl;
 }
 
+void ex12_16(){
+    cout << "-----ex12.16-----" << endl;
+    unique_ptr<int> up1(new int(12));
+//    unique_ptr<int> up2 = up1;
+    cout << "error msg: call to implicitly-deleted copy constructor of \"unique_ptr<int>\" " << endl;
+}
+
+void ex12_17(){
+    cout << "-----ex12.17-----" << endl;
+    /**
+     int ix = 1024, *pi = &ix, *pi2 = new int(2048);
+     typedef unique_ptr<int> IntP;
+     (a) IntP p0(ix);
+     (b) IntP p1(pi);
+     (c) IntP p2(pi2);
+     (d) IntP p3(&ix);
+     (e) IntP p4(new int(2048));
+     (f) IntP p5(p2.get());
+    */
+    cout << "(c) (e): legal; (a) (b) (d): illegal, unique_ptr should points to dynamic memory; (f): legal but not safe: if other smart pointers point to the same memory, may cause dangling pointer if either free the memory." << endl;
+}
+
+void ex12_18(){
+    cout << "-----ex12.18-----" << endl;
+    cout << "shared_ptr may have more than one smart pointers point to the same memory. if we release the memory to another shared_ptr, we still have other shared_ptr point to the memory. " << endl;
+}
+
+
+
 int main(int argc, const char * argv[]) {
 //    ex12_1();
 //    ex12_2();
@@ -174,9 +204,12 @@ int main(int argc, const char * argv[]) {
 //    ex12_7();
 //    ex12_8();
 //    ex12_9();
-    ex12_10();
-    ex12_11();
-    ex12_12();
-    ex12_13();
+//    ex12_10();
+//    ex12_11();
+//    ex12_12();
+//    ex12_13();
+    ex12_16();
+    ex12_17();
+    ex12_18();
     return 0;
 }
