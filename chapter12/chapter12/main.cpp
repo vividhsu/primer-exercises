@@ -118,6 +118,53 @@ void ex12_9(){
     cout << "with smart pointer, compiler will automatically free the memory." <<endl;
 }
 
+/**
+ void process(shared_ptr<int> ptr){
+    // use ptr
+ }
+*/
+
+void ex12_10(){
+    cout << "-----ex12.10-----" << endl;
+    /**
+     shared_ptr<int> p (new int(42));
+     process(shared_ptr<int> (p));
+    */
+    cout << "when we call process, it creates a temporary smart pointer points where p points. p count is 2, after process finishes, p count decrements to 1. It's correct." << endl;
+}
+
+void ex12_11(){
+    cout << "-----ex12.11-----" << endl;
+    /**
+     shared_ptr<int> p (new int(42));
+     process(shared_ptr<int>(p.get()));
+    */
+    cout << "when we call process, it creates a temporary smart pointer, name it as q points where p points. but p and q are two separate smarter pointers. both count are 1. After process finishes, q count decrements to 0, free the memory. p becomes a dangling pointer. It's not correct." << endl;
+}
+
+void ex12_12(){
+    cout << "-----ex12.12-----" << endl;
+    /**
+     auto p = new int();
+     auto sp = make_shared<int>();
+     (a) process(sp);
+     (b) process(new int());
+     (c) process(p);
+     (d) process(shared_ptr<int>(p));
+    */
+    cout << "(a)(d)legal; (b)(c)illegal, smart pointers construct is explicit, can't convert plain pointer.  " << endl;
+}
+
+void ex12_13(){
+    cout << "-----ex12.13-----" << endl;
+    /**
+     auto sp = make_shared<int>();
+     auto p = sp.get();
+     delete p;
+    */
+    cout << "sp becomes a dangling pointer because compile free the memory where p points, which also is where sp points." << endl;
+}
+
 int main(int argc, const char * argv[]) {
 //    ex12_1();
 //    ex12_2();
@@ -127,5 +174,9 @@ int main(int argc, const char * argv[]) {
 //    ex12_7();
 //    ex12_8();
 //    ex12_9();
+    ex12_10();
+    ex12_11();
+    ex12_12();
+    ex12_13();
     return 0;
 }
