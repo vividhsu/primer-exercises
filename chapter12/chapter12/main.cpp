@@ -226,6 +226,38 @@ void ex12_21(){
     cout << "original one is better, because if check returns a null pointer, we could not do subscript operation to what it points" << endl;
 }
 
+void ex12_23(){
+    //refer to https://github.com/Mooophy/Cpp-Primer/blob/master/ch12/ex12_23.cpp
+    cout << "-----ex12.23-----" << endl;
+    char* combo = new char[255]();
+    strcat(combo, "aaaa");
+    strcat(combo, "bbbb");
+    cout << combo << endl;
+    delete [] combo;
+    
+    string a = "aaaa";
+    string b = "bbbb";
+    cout << a + b << endl;
+}
+
+void ex12_24(){
+    cout << "-----ex12.24-----" << endl;
+    string input;
+    cin >> input;
+    unique_ptr<char []> ua(new char[input.size()]);
+    for(size_t i = 0 ; i < input.size(); i++){
+        ua[i] = input[i];
+    }
+    
+    ua.release();
+}
+
+void ex12_25(){
+    cout << "-----ex12.25-----" << endl;
+    int *pa = new int[10];
+    delete [] pa;
+}
+
 int main(int argc, const char * argv[]) {
 //    ex12_1();
 //    ex12_2();
@@ -243,6 +275,9 @@ int main(int argc, const char * argv[]) {
 //    ex12_17();
 //    ex12_18();
 //    ex12_20(argv[1]);
-    ex12_21();
+//    ex12_21();
+//    ex12_23();
+//    ex12_24();
+//    ex12_25();
     return 0;
 }
