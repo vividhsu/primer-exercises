@@ -63,6 +63,10 @@
             argument = "input_12_20.txt"
             isEnabled = "YES">
          </CommandLineArgument>
+         <CommandLineArgument
+            argument = "input_12_28.txt"
+            isEnabled = "YES">
+         </CommandLineArgument>
       </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>

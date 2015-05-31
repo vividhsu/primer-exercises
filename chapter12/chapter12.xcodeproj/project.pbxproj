@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5E3D83711B166BBF00FACBAD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D83701B166BBF00FACBAD /* main.cpp */; };
 		5E3D837A1B19304300FACBAD /* input_12_20.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5E3D83791B19271C00FACBAD /* input_12_20.txt */; };
+		5E3D837C1B1A65ED00FACBAD /* input_12_28.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5E3D837B1B1A65E600FACBAD /* input_12_28.txt */; };
+		5E3D83801B1BAEDC00FACBAD /* TextQuery.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D837F1B1BAEDC00FACBAD /* TextQuery.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -18,6 +20,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				5E3D837C1B1A65ED00FACBAD /* input_12_28.txt in CopyFiles */,
 				5E3D837A1B19304300FACBAD /* input_12_20.txt in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -29,6 +32,11 @@
 		5E3D83701B166BBF00FACBAD /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		5E3D83771B1687B400FACBAD /* strBlob.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = strBlob.h; sourceTree = "<group>"; };
 		5E3D83791B19271C00FACBAD /* input_12_20.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = input_12_20.txt; sourceTree = "<group>"; };
+		5E3D837B1B1A65E600FACBAD /* input_12_28.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = input_12_28.txt; sourceTree = "<group>"; };
+		5E3D837D1B1A734E00FACBAD /* TextQuery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextQuery.h; sourceTree = "<group>"; };
+		5E3D837E1B1A737C00FACBAD /* QueryResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QueryResult.h; sourceTree = "<group>"; };
+		5E3D837F1B1BAEDC00FACBAD /* TextQuery.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextQuery.cpp; sourceTree = "<group>"; };
+		5E3D83811B1BBC6C00FACBAD /* Query_strBlob.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Query_strBlob.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +70,13 @@
 			isa = PBXGroup;
 			children = (
 				5E3D83701B166BBF00FACBAD /* main.cpp */,
+				5E3D837E1B1A737C00FACBAD /* QueryResult.h */,
+				5E3D837D1B1A734E00FACBAD /* TextQuery.h */,
+				5E3D837F1B1BAEDC00FACBAD /* TextQuery.cpp */,
+				5E3D837B1B1A65E600FACBAD /* input_12_28.txt */,
 				5E3D83791B19271C00FACBAD /* input_12_20.txt */,
 				5E3D83771B1687B400FACBAD /* strBlob.h */,
+				5E3D83811B1BBC6C00FACBAD /* Query_strBlob.h */,
 			);
 			path = chapter12;
 			sourceTree = "<group>";
@@ -125,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E3D83711B166BBF00FACBAD /* main.cpp in Sources */,
+				5E3D83801B1BAEDC00FACBAD /* TextQuery.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

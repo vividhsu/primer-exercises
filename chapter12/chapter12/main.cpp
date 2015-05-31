@@ -10,8 +10,14 @@
 #include <vector>
 #include <memory>
 #include <fstream>
+#include <set>
+#include <map>
+#include <sstream>
 
 #include "strBlob.h"
+#include "TextQuery.h"
+#include "QueryResult.h"
+#include "Query_strBlob.h"
 
 using std::cout;
 using std::cin;
@@ -21,6 +27,10 @@ using std::shared_ptr;
 using std::make_shared;
 using std::unique_ptr;
 using std::ifstream;
+using std::allocator;
+using std::set;
+using std::map;
+using std::istringstream;
 
 void ex12_1(){
     cout << "-----ex12.1-----" << endl;
@@ -258,6 +268,147 @@ void ex12_25(){
     delete [] pa;
 }
 
+void ex12_26(){
+    cout << "-----ex12.26-----" << endl;
+    int n = 20;
+    allocator<string> alloc;
+    auto p = alloc.allocate(n);
+    auto q = p;
+    string s;
+    while (cin >> s && q != p + n) {
+        alloc.construct(q++, s);
+    }
+    while (q != p) {
+        alloc.destroy(--q);
+    }
+    alloc.deallocate(p, n);
+}
+
+void ex12_27(){
+    cout << "-----ex12.27-----" << endl;
+}
+
+void ex12_28(const char* title){
+    cout << "-----ex12.28-----" << endl;
+    ifstream input(title);
+    vector<string> v;
+    string line;
+    while (getline(input, line)){
+        v.push_back(line);
+    }
+    
+    
+    map<string, set<int>> m;
+    for (int i = 0; i < v.size(); i++) {
+        istringstream is(v[i]);
+        string word;
+        while (is >> word){
+            if (m.find(word) == m.end()) {
+                set<int> temp = {i};
+                m.insert(std::pair<string, set<int>>(word,temp));
+            }
+            else{
+                m[word].insert(i);
+            }
+        }
+    }
+    
+    for (auto &i: m){
+        cout << i.first << " occurs at line ";
+        for (auto &j: i.second){
+            cout << j << " ";
+        }
+        cout <<"\n";
+    }
+    cout << endl;
+    
+    input.close();
+}
+
+void ex12_29(){
+    cout << "-----ex12.29-----" << endl;
+    /**
+    void runQueries(ifstream &infile){
+        TextQuery tq(infile);
+        while (true) {
+            cout << "enter word to look for, or q to quit: ";
+            string s;
+            if (!(cin >> s) || s == "q")
+                break;
+            
+            print(cout, tq.query(s)) << endl;
+        }
+    }
+    */
+    
+    /**
+    void runQueries(ifstream &infile){
+        TextQuery tq(infile);
+        string s;
+        do {
+            cout << "enter word to look for, or q to quit: ";
+            string s;
+            if (!(cin >> s) || s == "q")
+                break;
+    
+            print(cout, tq.query(s)) << endl;
+        } while (true);
+        
+    }
+    */
+    
+}
+
+void runQueries(ifstream &infile){
+    TextQuery tq(infile);
+    while (true) {
+        cout << "enter word to look for, or q to quit: ";
+        string s;
+        if (!(cin >> s) || s == "q")
+            break;
+        
+        print(cout, tq.query(s)) << endl;
+    }
+}
+
+void ex12_30(const char* title){
+    cout << "-----ex12.30-----" << endl;
+    ifstream input(title);
+    runQueries(input);
+    input.close();
+}
+
+void ex12_31(){
+    cout << "-----ex12.31-----" << endl;
+    cout << "if we use vector instead of set, we have to remove the duplicates first." << endl;
+}
+
+void runQueries_strBlob(ifstream &infile){
+    TextQuery_strBlob tq(infile);
+    while (true) {
+        cout << "enter word to look for, or q to quit: ";
+        string s;
+        if (!(cin >> s) || s == "q")
+            break;
+        
+        QueryResult_strBlob tq_result = tq.query(s);
+        print_strBlob(cout, tq_result) << endl;
+    }
+}
+
+void ex12_32(const char* title){
+    cout << "-----ex12.32-----" << endl;
+    ifstream input(title);
+    runQueries_strBlob(input);
+    input.close();
+}
+
+
+void ex12_33(){
+    cout << "-----ex12.33-----" << endl;
+}
+
+
 int main(int argc, const char * argv[]) {
 //    ex12_1();
 //    ex12_2();
@@ -279,5 +430,12 @@ int main(int argc, const char * argv[]) {
 //    ex12_23();
 //    ex12_24();
 //    ex12_25();
+//    ex12_27();
+//    ex12_28(argv[2]);
+//    ex12_29();
+//    ex12_30(argv[2]);
+//    ex12_31();
+//    ex12_32(argv[2]);
+//    ex12_33();
     return 0;
 }
