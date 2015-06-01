@@ -8,11 +8,15 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
+
+#include "HasPtr.h"
 
 using std::cout;
 using std::cin;
 using std::endl;
 using std::string;
+using std::vector;
 
 
 void ex13_01(){
@@ -38,16 +42,7 @@ void ex13_03(){
 
 void ex13_05(){
     cout << "-----ex13.5-----" << endl;
-    /**
-    class HasPtr {
-    public:
-        HasPtr(const string &s = string()): ps(new string(s)), i(0) {}
-        HasPtr(const HasPtr &orig): ps(orig.ps), i(orig.i) {}
-    private:
-        string *ps;
-        int i;
-    };
-    */
+    
 }
 
 void ex13_06(){
@@ -61,31 +56,91 @@ void ex13_06(){
 void ex13_08(){
     // refer to https://github.com/Mooophy/Cpp-Primer/blob/master/ch13/ex13_08.h
     cout << "-----ex13.8-----" << endl;
+    
+}
+
+void ex13_09(){
+    cout << "-----ex13.9-----" << endl;
+    cout << "destructor is a special member function that cleans up an object when the object goes out of scope or is deleted. \n";
+    cout << "destructors work: (1) variables are destroyed when they go out of scope; (2) members of an object are destroyed when the object of which they are a part is destroyed; (3) elements in a container - whether a library container or an array - are destroyed when the container is destroyed; (4) dynamically allocated objects are destroyed when the delete operator is applied to a pointer to the object; (5) temporary objects are destroyed at the end of the full expression in which the tmporary was created. \n";
+    cout << "compiler generates synthesized destructor when class does not define one." << endl;
+}
+
+void ex13_11(){
+    cout << "-----ex13.11-----" << endl;
+}
+
+void ex13_12(){
+    cout << "-----ex13.12-----" << endl;
     /**
-    class HasPtr {
-    public:
-        HasPtr(const string &s = string()): ps(new string(s)), i(0) {}
-        HasPtr(const HasPtr &orig): ps(orig.ps), i(orig.i) {}
-        HasPtr& operator=(const HasPtr &rhs){
-            string *temp = new string(*rhs.ps);
-            delete ps;
-            ps = temp;
-            i = rhs.i;
-            return *this;
-        }
-    private:
-        string *ps;
-        int i;
-    };
+    bool fcn(const Sales_data *trans, Sales_data accum){
+        Sales_data item1(*trans);
+        Sales_data item2(accum);
+        return item1.isbn() != item2.isbn();
+    } //item1, item2 out of scope, call destructor
+     //accum is a temporary variable, when function finishes, call destructor
     */
 }
 
+struct X {
+    X() { cout << "X()" << endl; }
+    X(const X&) { cout << "X(const X&)" << endl; }
+    X& operator=(const X &) { cout << "X& operator=(const X &)" << endl; return *this; }
+    ~X() { cout << "~X()" << endl; }
+};
+
+void f1(X a){
+    cout << "......." << endl;
+    X b = a;
+    cout << "......." << endl;
+}
+
+void f2(X &a){
+    cout << "......." << endl;
+    X b = a;
+    cout << "......." << endl;
+}
+
+void ex13_13(){
+    cout << "-----ex13.13-----" << endl;
+    cout << "dynamic allocate: \n";
+    cout << "-------" << endl;
+    X *a = new X();
+    cout << "-------" << endl;
+    delete a;
+    cout << "pass nonreference: \n";
+    cout << "-------" << endl;
+    X b;
+    cout << "-------" << endl;
+    f1(b);
+    cout << "pass reference: \n";
+    cout << "-------" << endl;
+    X *c = new X();
+    cout << "-------" << endl;
+    f2(*c);
+    cout << "-------" << endl;
+    delete c;
+    cout << "put in container" << endl;
+    cout << "-------" << endl;
+    X d;
+    cout << "-------" << endl;
+    vector<X> dv;
+    cout << "-------" << endl;
+    dv.push_back(d);
+    
+    
+}
+
 int main(int argc, const char * argv[]) {
-    ex13_01();
-    ex13_02();
-    ex13_03();
-    ex13_05();
-    ex13_06();
-    ex13_08();
+//    ex13_01();
+//    ex13_02();
+//    ex13_03();
+//    ex13_05();
+//    ex13_06();
+//    ex13_08();
+//    ex13_09();
+//    ex13_11();
+//    ex13_12();
+    ex13_13();
     return 0;
 }
