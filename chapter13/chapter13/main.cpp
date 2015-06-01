@@ -131,6 +131,46 @@ void ex13_13(){
     
 }
 
+static int unique = 0;
+
+struct numbered {
+    numbered () { mysn = ++unique; cout << "default constructor" << endl; }
+    numbered (const numbered&) { mysn = ++unique; cout << "copy constructor" << endl; }
+    int mysn;
+};
+
+void f(numbered s){
+    cout << s.mysn << endl;
+}
+
+void ex13_14(){
+    cout << "-----ex13.14-----" << endl;
+    numbered a, b = a, c = b;
+    f(a); f(b); f(c);
+}
+
+void ex13_15(){
+    cout << "-----ex13.15-----" << endl;
+    numbered a, b = a, c = b;
+    f(a); f(b); f(c);
+}
+
+void f_ref(const numbered &s){
+    cout << s.mysn << endl;
+}
+
+void ex13_16(){
+    cout << "-----ex13.16-----" << endl;
+    numbered a, b = a, c = b;
+    f_ref(a); f_ref(b); f_ref(c);
+}
+
+void ex13_17(){
+    cout << "-----ex13.17-----" << endl;
+    
+}
+
+
 int main(int argc, const char * argv[]) {
 //    ex13_01();
 //    ex13_02();
@@ -141,6 +181,10 @@ int main(int argc, const char * argv[]) {
 //    ex13_09();
 //    ex13_11();
 //    ex13_12();
-    ex13_13();
+//    ex13_13();
+//    ex13_14();
+//    ex13_15();
+//    ex13_16();
+//    ex13_17();
     return 0;
 }
