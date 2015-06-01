@@ -170,6 +170,30 @@ void ex13_17(){
     
 }
 
+static int uniq = 0;
+
+class Employee {
+public:
+    Employee() { id = ++uniq; }
+    Employee(const string s): name(s) { id = ++uniq;}
+    Employee(const Employee&) = delete;
+    Employee& operator=(const Employee&) = delete;
+    ~ Employee() = default;
+private:
+    string name;
+    int id;
+};
+
+void ex13_18(){
+    cout << "-----ex13.18-----" << endl;
+    
+}
+
+void ex13_19(){
+    cout << "-----ex13.19-----" << endl;
+    cout << "no need to define copy control since each employee is unique." << endl;
+}
+
 
 int main(int argc, const char * argv[]) {
 //    ex13_01();
@@ -186,5 +210,7 @@ int main(int argc, const char * argv[]) {
 //    ex13_15();
 //    ex13_16();
 //    ex13_17();
+    ex13_18();
+    ex13_19();
     return 0;
 }
