@@ -50,10 +50,42 @@ void ex13_05(){
     */
 }
 
+void ex13_06(){
+    cout << "-----ex13.6-----" << endl;
+    cout <<"copy-assignment operator is the version of assignment operator that takes an object of the same type as its type.\n";
+    cout << "it is used to assign the same type object to another. \n";
+    cout << "synthesized copy-assignment operator assignes each nonstatic member of the right-hand to the left-hand using the copy-assignment operator for the type of the member.\n";
+    cout << "compiler generates a synthesized copy-assignment operator if the class does not define one." <<endl;
+}
+
+void ex13_08(){
+    // refer to https://github.com/Mooophy/Cpp-Primer/blob/master/ch13/ex13_08.h
+    cout << "-----ex13.8-----" << endl;
+    /**
+    class HasPtr {
+    public:
+        HasPtr(const string &s = string()): ps(new string(s)), i(0) {}
+        HasPtr(const HasPtr &orig): ps(orig.ps), i(orig.i) {}
+        HasPtr& operator=(const HasPtr &rhs){
+            string *temp = new string(*rhs.ps);
+            delete ps;
+            ps = temp;
+            i = rhs.i;
+            return *this;
+        }
+    private:
+        string *ps;
+        int i;
+    };
+    */
+}
+
 int main(int argc, const char * argv[]) {
     ex13_01();
     ex13_02();
     ex13_03();
     ex13_05();
+    ex13_06();
+    ex13_08();
     return 0;
 }
