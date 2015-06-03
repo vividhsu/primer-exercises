@@ -231,6 +231,65 @@ void ex13_28(){
     cout << "-----ex13.28-----" << endl;
 }
 
+void ex13_29(){
+    cout << "-----ex13.29-----" << endl;
+    /**
+    class HasPtr {
+    public:
+        friend void swap(HasPtr &, HasPtr &);
+        ......
+    private:
+        string *ps;
+        int i;
+    };
+     
+    void swap(HasPtr &lhs, HasPtr &rhs){
+        using std::swap;
+        swap(lhs.ps, rhs.ps);
+        swap(lhs.i, rhs.i);
+    }
+     
+    class Foo {
+    public:
+        friend void swap(Foo &, Foo &);
+        ......
+    private:
+        hasPtr h;
+    };
+    
+    void swap(Foo &lhs, Foo &rhs) {
+        using std::swap;
+        swap(lhs.h, rhs.h);
+    }
+    */
+    cout << "calling the members' swap function, since built-in types don't have type-specific swap, use the standard swap." << endl;
+}
+
+void ex13_30(){
+    cout << "-----ex13.30-----" << endl;
+    string sa = "aa";
+    string sb = "bb";
+    HasPtr_valuelike a(sa), b(sb);
+    swap(a, b);
+}
+
+void ex13_31(){
+    cout << "-----ex13.31-----" << endl;
+    HasPtr_valuelike a("vbf"), b("qsa"), c("wed");
+    vector<HasPtr_valuelike> v;
+    v.push_back(a);
+    v.push_back(b);
+    v.push_back(c);
+    sort(v.begin(), v.end());
+    
+}
+
+void ex13_32(){
+    cout << "-----ex13.32-----" << endl;
+    cout << "no need to define swap for pointerlike HasPtr, because it doesn't copy string, just add a pointer to the same string." << endl;
+}
+
+
 int main(int argc, const char * argv[]) {
 //    ex13_01();
 //    ex13_02();
@@ -248,12 +307,16 @@ int main(int argc, const char * argv[]) {
 //    ex13_17();
 //    ex13_18();
 //    ex13_19();
-    ex13_22();
-    ex13_23();
-    ex13_24();
-    ex13_25();
-    ex13_26();
-    ex13_27();
-    ex13_28();
+//    ex13_22();
+//    ex13_23();
+//    ex13_24();
+//    ex13_25();
+//    ex13_26();
+//    ex13_27();
+//    ex13_28();
+//    ex13_29();
+//    ex13_30();
+//    ex13_31();
+//    ex13_32();
     return 0;
 }

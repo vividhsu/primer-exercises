@@ -16,6 +16,8 @@ using std::string;
 
 class HasPtr_valuelike {
 public:
+    friend void swap(HasPtr_valuelike&, HasPtr_valuelike&);
+    friend bool operator<(const HasPtr_valuelike&, const HasPtr_valuelike&);
     HasPtr_valuelike(const string &s = string()): ps(new string(s)), i(0) {}
     HasPtr_valuelike(const HasPtr_valuelike &orig): ps(new string(*orig.ps)), i(orig.i) {}
     HasPtr_valuelike& operator=(const HasPtr_valuelike &rhs){
@@ -31,5 +33,15 @@ private:
     int i;
 };
 
+void swap(HasPtr_valuelike &lhs, HasPtr_valuelike &rhs){
+    using std::swap;
+    swap(lhs.ps, rhs.ps);
+    swap(lhs.i, rhs.i);
+    std::cout << "calling HasPtr_valuelike swap" << std::endl;
+}
+
+bool operator<(const HasPtr_valuelike &lhs, const HasPtr_valuelike &rhs) {
+    return *lhs.ps < *rhs.ps;
+}
 
 #endif
