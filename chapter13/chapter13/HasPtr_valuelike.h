@@ -14,18 +14,18 @@
 
 using std::string;
 
-class HasPtr {
+class HasPtr_valuelike {
 public:
-    HasPtr(const string &s = string()): ps(new string(s)), i(0) {}
-    HasPtr(const HasPtr &orig): ps(orig.ps), i(orig.i) {}
-    HasPtr& operator=(const HasPtr &rhs){
+    HasPtr_valuelike(const string &s = string()): ps(new string(s)), i(0) {}
+    HasPtr_valuelike(const HasPtr_valuelike &orig): ps(new string(*orig.ps)), i(orig.i) {}
+    HasPtr_valuelike& operator=(const HasPtr_valuelike &rhs){
         string *temp = new string(*rhs.ps);
         delete ps;
         ps = temp;
         i = rhs.i;
         return *this;
     }
-    ~HasPtr() { delete ps; }
+    ~HasPtr_valuelike() { delete ps; }
 private:
     string *ps;
     int i;

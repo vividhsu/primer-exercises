@@ -10,7 +10,11 @@
 #include <string>
 #include <vector>
 
-#include "HasPtr.h"
+#include "HasPtr_pointerlike.h"
+#include "HasPtr_valuelike.h"
+#include "StrBlob.h"
+#include "TreeNode.h"
+
 
 using std::cout;
 using std::cin;
@@ -194,6 +198,38 @@ void ex13_19(){
     cout << "no need to define copy control since each employee is unique." << endl;
 }
 
+void ex13_22(){
+    cout << "-----ex13.22-----" << endl;
+    string s = "aaa";
+    HasPtr_valuelike a(s);
+    HasPtr_valuelike b = a;
+}
+
+void ex13_23(){
+    cout << "-----ex13.23-----" << endl;
+}
+
+void ex13_24(){
+    cout << "-----ex13.24-----" << endl;
+    cout << "if not define copy constructor, the left-hand operand and right-hand operand point to the same string. \n";
+    cout << "if not define destructor, the pointer to string memory wont free." << endl;
+}
+
+void ex13_25(){
+    cout << "-----ex13.25-----" << endl;
+}
+
+void ex13_26(){
+    cout << "-----ex13.26-----" << endl;
+}
+
+void ex13_27(){
+    cout << "-----ex13.27-----" << endl;
+}
+
+void ex13_28(){
+    cout << "-----ex13.28-----" << endl;
+}
 
 int main(int argc, const char * argv[]) {
 //    ex13_01();
@@ -210,7 +246,14 @@ int main(int argc, const char * argv[]) {
 //    ex13_15();
 //    ex13_16();
 //    ex13_17();
-    ex13_18();
-    ex13_19();
+//    ex13_18();
+//    ex13_19();
+    ex13_22();
+    ex13_23();
+    ex13_24();
+    ex13_25();
+    ex13_26();
+    ex13_27();
+    ex13_28();
     return 0;
 }
