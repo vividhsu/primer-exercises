@@ -14,6 +14,7 @@
 #include "HasPtr_valuelike.h"
 #include "StrBlob.h"
 #include "TreeNode.h"
+#include "mailHandle.h"
 
 
 using std::cout;
@@ -289,6 +290,32 @@ void ex13_32(){
     cout << "no need to define swap for pointerlike HasPtr, because it doesn't copy string, just add a pointer to the same string." << endl;
 }
 
+void ex13_33(){
+    cout << "-----ex13.33-----" << endl;
+    cout << "because save and remove make the change of the folder, can\'t pass \"const Folder*\";";
+    cout << "if pass \"Folder\", inside save and remove create local Folder, won't change the Folder passed to." << endl;
+}
+
+void ex13_34(){
+    cout << "-----ex13.34-----" << endl;
+    
+}
+
+void ex13_35(){
+    cout << "-----ex13.35-----" << endl;
+    cout << "synthesized copy control could not control add/remove message from a folder and add/remove folder for a message." << endl;
+}
+
+void ex13_36(){
+    cout << "-----ex13.36-----" << endl;
+    
+}
+
+void ex13_37(){
+    cout << "-----ex13.37-----" << endl;
+    
+}
+
 
 int main(int argc, const char * argv[]) {
 //    ex13_01();
@@ -318,5 +345,10 @@ int main(int argc, const char * argv[]) {
 //    ex13_30();
 //    ex13_31();
 //    ex13_32();
+    ex13_33();
+    ex13_34();
+    ex13_35();
+    ex13_36();
+    ex13_37();
     return 0;
 }

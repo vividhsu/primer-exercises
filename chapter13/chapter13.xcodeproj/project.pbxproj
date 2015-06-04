@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5E3D838F1B1CD0F800FACBAD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D838E1B1CD0F800FACBAD /* main.cpp */; };
+		5E3D83F21B1FB5DE00FACBAD /* mailHandle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D83F01B1FB5DE00FACBAD /* mailHandle.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +30,8 @@
 		5E3D83E41B1E650E00FACBAD /* HasPtr_pointerlike.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HasPtr_pointerlike.h; sourceTree = "<group>"; };
 		5E3D83E51B1E6AE800FACBAD /* StrBlob.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StrBlob.h; sourceTree = "<group>"; };
 		5E3D83E61B1E736100FACBAD /* TreeNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TreeNode.h; sourceTree = "<group>"; };
+		5E3D83F01B1FB5DE00FACBAD /* mailHandle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mailHandle.cpp; sourceTree = "<group>"; };
+		5E3D83F11B1FB5DE00FACBAD /* mailHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mailHandle.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,8 @@
 			isa = PBXGroup;
 			children = (
 				5E3D838E1B1CD0F800FACBAD /* main.cpp */,
+				5E3D83F01B1FB5DE00FACBAD /* mailHandle.cpp */,
+				5E3D83F11B1FB5DE00FACBAD /* mailHandle.h */,
 				5E3D83E61B1E736100FACBAD /* TreeNode.h */,
 				5E3D83E51B1E6AE800FACBAD /* StrBlob.h */,
 				5E3D83951B1D03CA00FACBAD /* HasPtr_valuelike.h */,
@@ -126,6 +131,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E3D83F21B1FB5DE00FACBAD /* mailHandle.cpp in Sources */,
 				5E3D838F1B1CD0F800FACBAD /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
