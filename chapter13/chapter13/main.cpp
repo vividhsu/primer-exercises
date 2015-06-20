@@ -7,7 +7,6 @@
 //
 
 #include <iostream>
-#include <string>
 #include <vector>
 #include <fstream>
 
@@ -18,12 +17,11 @@
 #include "mailHandle.h"
 #include "StrVec.h"
 #include "TextQuery.h"
-
+#include "String.h"
 
 using std::cout;
 using std::cin;
 using std::endl;
-using std::string;
 using std::vector;
 using std::ifstream;
 
@@ -364,6 +362,58 @@ void ex13_44(){
     // refer to https://github.com/Mooophy/Cpp-Primer/tree/master/ch13
 }
 
+void ex13_45(){
+    cout << "-----ex13.45-----" << endl;
+    cout << "Lvalues have persist state, whereas rvalues are either literal or tempory objects created in the course of evaluating expression." << endl;
+}
+
+void ex13_46(){
+    cout << "-----ex13.46-----" << endl;
+    /**
+    int f();
+    vector<int> vi(100);
+    int&& r1 = f();
+    int& r2 = vi[0];
+    int& r3 = r1;
+    int&& r4 = vi[0] * f();
+    */
+}
+
+void ex13_47(){
+    cout << "-----ex13.47-----" << endl;
+    
+}
+
+
+
+void ex13_48(){
+    cout << "-----ex13.48-----" << endl;
+    vector<String> v;
+    String s1;                   // <----- lvalue
+    cout << "put s1: ";
+    v.push_back(s1);
+    cout << "done" << endl;
+    char text[] = "from char";
+    String s2(text);
+    cout << "put s2: ";
+    v.push_back(s2);
+    cout << "done" << endl;
+    String s3(s2);
+    cout << "put s3: ";
+    v.push_back(s3);
+    cout << "done" << endl;
+    String s4 = s2;
+    cout << "put s4: ";
+    v.push_back(s4);
+    cout << "done" << endl;
+    String s5("temp");            // <----  rvalue
+    cout << "put s5: ";
+    v.push_back(s5);
+    cout << "done" << endl;
+    
+}
+
+
 int main(int argc, const char * argv[]) {
 //    ex13_01();
 //    ex13_02();
@@ -402,6 +452,10 @@ int main(int argc, const char * argv[]) {
 //    ex13_41();
 //    ex13_42(argv[1]);
 //    ex13_43();
-    ex13_44();
+//    ex13_44();
+//    ex13_45();
+//    ex13_46();
+//    ex13_47();
+    ex13_48();
     return 0;
 }

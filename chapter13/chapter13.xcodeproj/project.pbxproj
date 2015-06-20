@@ -12,7 +12,7 @@
 		5E3D84071B23919C00FACBAD /* StrVec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D84051B23919C00FACBAD /* StrVec.cpp */; };
 		5E3D840B1B23AD6100FACBAD /* TextQuery.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D84091B23AD6100FACBAD /* TextQuery.cpp */; };
 		5E3D840D1B23AE7B00FACBAD /* input_13_42.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5E3D840C1B23AE6500FACBAD /* input_13_42.txt */; };
-		5E3D84101B23B5E200FACBAD /* String.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D840E1B23B5E200FACBAD /* String.cpp */; };
+		5E3D841A1B3617EF00FACBAD /* String.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D84181B3617EF00FACBAD /* String.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,8 +43,8 @@
 		5E3D84091B23AD6100FACBAD /* TextQuery.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextQuery.cpp; sourceTree = "<group>"; };
 		5E3D840A1B23AD6100FACBAD /* TextQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextQuery.h; sourceTree = "<group>"; };
 		5E3D840C1B23AE6500FACBAD /* input_13_42.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = input_13_42.txt; sourceTree = "<group>"; };
-		5E3D840E1B23B5E200FACBAD /* String.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = String.cpp; sourceTree = "<group>"; };
-		5E3D840F1B23B5E200FACBAD /* String.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = String.h; sourceTree = "<group>"; };
+		5E3D84181B3617EF00FACBAD /* String.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = String.cpp; sourceTree = "<group>"; };
+		5E3D84191B3617EF00FACBAD /* String.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = String.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				5E3D838E1B1CD0F800FACBAD /* main.cpp */,
-				5E3D840E1B23B5E200FACBAD /* String.cpp */,
-				5E3D840F1B23B5E200FACBAD /* String.h */,
+				5E3D84181B3617EF00FACBAD /* String.cpp */,
+				5E3D84191B3617EF00FACBAD /* String.h */,
 				5E3D840C1B23AE6500FACBAD /* input_13_42.txt */,
 				5E3D84081B23AD1600FACBAD /* QueryResult.h */,
 				5E3D84091B23AD6100FACBAD /* TextQuery.cpp */,
@@ -154,7 +154,7 @@
 			files = (
 				5E3D83F21B1FB5DE00FACBAD /* mailHandle.cpp in Sources */,
 				5E3D840B1B23AD6100FACBAD /* TextQuery.cpp in Sources */,
-				5E3D84101B23B5E200FACBAD /* String.cpp in Sources */,
+				5E3D841A1B3617EF00FACBAD /* String.cpp in Sources */,
 				5E3D838F1B1CD0F800FACBAD /* main.cpp in Sources */,
 				5E3D84071B23919C00FACBAD /* StrVec.cpp in Sources */,
 			);
