@@ -9,17 +9,22 @@
 /* Begin PBXBuildFile section */
 		5E3D838F1B1CD0F800FACBAD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D838E1B1CD0F800FACBAD /* main.cpp */; };
 		5E3D83F21B1FB5DE00FACBAD /* mailHandle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D83F01B1FB5DE00FACBAD /* mailHandle.cpp */; };
+		5E3D84071B23919C00FACBAD /* StrVec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D84051B23919C00FACBAD /* StrVec.cpp */; };
+		5E3D840B1B23AD6100FACBAD /* TextQuery.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D84091B23AD6100FACBAD /* TextQuery.cpp */; };
+		5E3D840D1B23AE7B00FACBAD /* input_13_42.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5E3D840C1B23AE6500FACBAD /* input_13_42.txt */; };
+		5E3D84101B23B5E200FACBAD /* String.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D840E1B23B5E200FACBAD /* String.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		5E3D83891B1CD0F800FACBAD /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
 			files = (
+				5E3D840D1B23AE7B00FACBAD /* input_13_42.txt in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -32,6 +37,14 @@
 		5E3D83E61B1E736100FACBAD /* TreeNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TreeNode.h; sourceTree = "<group>"; };
 		5E3D83F01B1FB5DE00FACBAD /* mailHandle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mailHandle.cpp; sourceTree = "<group>"; };
 		5E3D83F11B1FB5DE00FACBAD /* mailHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mailHandle.h; sourceTree = "<group>"; };
+		5E3D84051B23919C00FACBAD /* StrVec.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StrVec.cpp; sourceTree = "<group>"; };
+		5E3D84061B23919C00FACBAD /* StrVec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StrVec.h; sourceTree = "<group>"; };
+		5E3D84081B23AD1600FACBAD /* QueryResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QueryResult.h; sourceTree = "<group>"; };
+		5E3D84091B23AD6100FACBAD /* TextQuery.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextQuery.cpp; sourceTree = "<group>"; };
+		5E3D840A1B23AD6100FACBAD /* TextQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextQuery.h; sourceTree = "<group>"; };
+		5E3D840C1B23AE6500FACBAD /* input_13_42.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = input_13_42.txt; sourceTree = "<group>"; };
+		5E3D840E1B23B5E200FACBAD /* String.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = String.cpp; sourceTree = "<group>"; };
+		5E3D840F1B23B5E200FACBAD /* String.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = String.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +78,14 @@
 			isa = PBXGroup;
 			children = (
 				5E3D838E1B1CD0F800FACBAD /* main.cpp */,
+				5E3D840E1B23B5E200FACBAD /* String.cpp */,
+				5E3D840F1B23B5E200FACBAD /* String.h */,
+				5E3D840C1B23AE6500FACBAD /* input_13_42.txt */,
+				5E3D84081B23AD1600FACBAD /* QueryResult.h */,
+				5E3D84091B23AD6100FACBAD /* TextQuery.cpp */,
+				5E3D840A1B23AD6100FACBAD /* TextQuery.h */,
+				5E3D84051B23919C00FACBAD /* StrVec.cpp */,
+				5E3D84061B23919C00FACBAD /* StrVec.h */,
 				5E3D83F01B1FB5DE00FACBAD /* mailHandle.cpp */,
 				5E3D83F11B1FB5DE00FACBAD /* mailHandle.h */,
 				5E3D83E61B1E736100FACBAD /* TreeNode.h */,
@@ -132,7 +153,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E3D83F21B1FB5DE00FACBAD /* mailHandle.cpp in Sources */,
+				5E3D840B1B23AD6100FACBAD /* TextQuery.cpp in Sources */,
+				5E3D84101B23B5E200FACBAD /* String.cpp in Sources */,
 				5E3D838F1B1CD0F800FACBAD /* main.cpp in Sources */,
+				5E3D84071B23919C00FACBAD /* StrVec.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

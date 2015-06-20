@@ -1,0 +1,3 @@
+Associative and sequential containers differ from one another in a fundamental way: Elements in an
+associative container are stored and retrieved by a key. In contrast, elements in a sequential con-tainer are stored and accessed sequentially by their position in the container.
+Although the associative containers share much of the behavior of the sequential containers, they differ from the sequential containers in ways that reflect the use of keys.

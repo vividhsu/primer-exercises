@@ -9,12 +9,15 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <fstream>
 
 #include "HasPtr_pointerlike.h"
 #include "HasPtr_valuelike.h"
 #include "StrBlob.h"
 #include "TreeNode.h"
 #include "mailHandle.h"
+#include "StrVec.h"
+#include "TextQuery.h"
 
 
 using std::cout;
@@ -22,6 +25,7 @@ using std::cin;
 using std::endl;
 using std::string;
 using std::vector;
+using std::ifstream;
 
 
 void ex13_01(){
@@ -316,6 +320,49 @@ void ex13_37(){
     
 }
 
+void ex13_39(){
+    cout << "-----ex13.39-----" << endl;
+    
+}
+
+void ex13_40(){
+    cout << "-----ex13.40-----" << endl;
+    
+}
+
+void ex13_41(){
+    cout << "-----ex13.41-----" << endl;
+    cout << "if we use prefix increase, current first_free can't be constructed, always increase the first_free first." << endl;
+}
+
+void runQueries(ifstream &infile){
+    TextQuery tq(infile);
+    while (true) {
+        cout << "enter word to look for, or q to quit: ";
+        string s;
+        if (!(cin >> s) || s == "q")
+            break;
+        
+        print(cout, tq.query(s)) << endl;
+    }
+}
+
+void ex13_42(const char* title){
+    cout << "-----ex13.42-----" << endl;
+    ifstream input(title);
+    runQueries(input);
+    input.close();
+}
+
+void ex13_43(){
+    cout << "-----ex13.43-----" << endl;
+    
+}
+
+void ex13_44(){
+    cout << "-----ex13.44-----" << endl;
+    // refer to https://github.com/Mooophy/Cpp-Primer/tree/master/ch13
+}
 
 int main(int argc, const char * argv[]) {
 //    ex13_01();
@@ -345,10 +392,16 @@ int main(int argc, const char * argv[]) {
 //    ex13_30();
 //    ex13_31();
 //    ex13_32();
-    ex13_33();
-    ex13_34();
-    ex13_35();
-    ex13_36();
-    ex13_37();
+//    ex13_33();
+//    ex13_34();
+//    ex13_35();
+//    ex13_36();
+//    ex13_37();
+//    ex13_39();
+//    ex13_40();
+//    ex13_41();
+//    ex13_42(argv[1]);
+//    ex13_43();
+    ex13_44();
     return 0;
 }
