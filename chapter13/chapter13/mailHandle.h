@@ -27,6 +27,10 @@ public:
     Message(const Message&);
     // copy-assignment operator
     Message& operator=(const Message&);
+    //move constructor
+    Message(Message&&);
+    // move assignment operator
+    Message& operator=(Message&&);
     //destructor
     ~Message();
     
@@ -42,6 +46,7 @@ private:
     // private auxiliary functions
     void add_to_Folders(const Message&);
     void remove_from_Folders();
+    void move_Folders(Message *m);
     
     void addFdr(Folder *f) { folders.insert(f); }
     void remFdr(Folder *f) { folders.erase(f); }

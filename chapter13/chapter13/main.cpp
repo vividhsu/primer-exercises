@@ -18,6 +18,7 @@
 #include "StrVec.h"
 #include "TextQuery.h"
 #include "String.h"
+#include "Foo.h"
 
 using std::cout;
 using std::cin;
@@ -413,6 +414,68 @@ void ex13_48(){
     
 }
 
+void ex13_49(){
+    cout << "-----ex13.49-----" << endl;
+    
+}
+
+void ex13_50(){
+    cout << "-----ex13.50-----" << endl;
+    vector<String> v;
+    String s1;                   // <----- lvalue
+    cout << "put s1: ";
+    v.push_back(s1);
+    cout << "done" << endl;
+    char text[] = "from char";
+    String s2(text);
+    cout << "put s2: ";
+    v.push_back(s2);
+    cout << "done" << endl;
+    String s3(s2);
+    cout << "put s3: ";
+    v.push_back(s3);
+    cout << "done" << endl;
+    String s4 = s2;
+    cout << "put s4: ";
+    v.push_back(s4);
+    cout << "done" << endl;
+    String s5("temp");            // <----  rvalue
+    cout << "put s5: ";
+    v.push_back(s5);
+    cout << "done" << endl;
+}
+
+void ex13_51(){
+    cout << "-----ex13.51-----" << endl;
+    cout << "The result returned by clone is a rvalue, so it calles move constructor, it's legal." << endl;
+}
+
+void ex13_52(){
+    cout << "-----ex13.52-----" << endl;
+    //see page 541 for all the detail
+}
+
+void ex13_55(){
+    cout << "-----ex13.55-----" << endl;
+    
+}
+
+void ex13_56(){
+    cout << "-----ex13.56-----" << endl;
+    cout << "inside the sorted function, call itself, it will cause memory leak." << endl;
+}
+
+void ex13_57(){
+    cout << "-----ex13.57-----" << endl;
+    cout << "inside the sorted function, it calls the one pass the rvalue, it works." << endl;
+}
+
+void ex13_58(){
+    cout << "-----ex13.58-----" << endl;
+    Foo f;
+    f.sorted();
+}
+
 
 int main(int argc, const char * argv[]) {
 //    ex13_01();
@@ -456,6 +519,14 @@ int main(int argc, const char * argv[]) {
 //    ex13_45();
 //    ex13_46();
 //    ex13_47();
-    ex13_48();
+//    ex13_48();
+//    ex13_49();
+//    ex13_50();
+//    ex13_51();
+//    ex13_52();
+//    ex13_55();
+//    ex13_56();
+//    ex13_57();
+    ex13_58();
     return 0;
 }

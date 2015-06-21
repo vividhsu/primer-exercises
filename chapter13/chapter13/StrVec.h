@@ -30,6 +30,10 @@ public:
     StrVec(const StrVec&);
     // copy assignment operation
     StrVec& operator=(const StrVec &);
+    // move constructor
+    StrVec(StrVec &&) noexcept;
+    // move assignment opearation
+    StrVec& operator=(StrVec &&) noexcept;
     // destructor
     ~StrVec();
     
@@ -104,6 +108,12 @@ inline StrVec::StrVec(const StrVec &rhs) {
     cap = data.second;
 }
 
+inline StrVec::StrVec(StrVec &&s) noexcept : elements(s.elements), first_free(s.first_free), cap(s.cap) {
+    s.elements = nullptr;
+    s.first_free = nullptr;
+    s.cap = nullptr;
+}
+
 inline StrVec::~StrVec() {
     free();
 }
@@ -114,6 +124,17 @@ inline StrVec& StrVec::operator=(const StrVec &rhs) {
     elements = data.first;
     first_free = data.second;
     cap = data.second;
+    return *this;
+}
+
+inline StrVec& StrVec::operator=(StrVec &&rhs) noexcept {
+    if (this != &rhs) {
+        free();
+        elements = rhs.elements;
+        first_free = rhs.first_free;
+        cap = rhs.cap;
+        rhs.elements = rhs.first_free = rhs.cap = nullptr;
+    }
     return *this;
 }
 

@@ -22,6 +22,15 @@ void Message::remove_from_Folders() {
     folders.clear();
 }
 
+void Message::move_Folders(Message *m) {
+    folders = std::move(m -> folders);
+    for (auto f: folders) {
+        f -> remMsg(m);
+        f -> addMsg(this);
+    }
+    m -> folders.clear();
+}
+
 Message::Message(const Message &m): content(m.content), folders(m.folders) {
     add_to_Folders(m);
 }
@@ -32,6 +41,19 @@ Message& Message::operator=(const Message &m) {
     content = m.content;
     folders = m.folders;
     add_to_Folders(m);
+    return *this;
+}
+
+Message::Message(Message &&m): content(std::move(m.content)) {
+    move_Folders(&m);
+}
+
+Message& Message::operator=(Message &&rhs) {
+    if (this != &rhs) {
+        remove_from_Folders();
+        content = std::move(rhs.content);
+        move_Folders(&rhs);
+    }
     return *this;
 }
 

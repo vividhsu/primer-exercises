@@ -27,6 +27,7 @@ public:
         i = rhs.i;
         return *this;
     }
+       
     ~HasPtr_valuelike() { delete ps; }
 private:
     string *ps;

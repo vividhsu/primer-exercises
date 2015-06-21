@@ -15,8 +15,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
             endingLineNumber = "41"
-            landmarkName = "operator=(HasPtr_pointerlike &amp;rhs)"
-            landmarkType = "7">
+            landmarkName = "HasPtr_pointerlike::operator=(HasPtr_pointerlike &amp;rhs)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

@@ -31,6 +31,10 @@ public:
     String(const String&);
     // copy-assignment operator
     String& operator=(const String&);
+    // move constructor
+    String(String &&) noexcept;
+    // move assignment operator
+    String& operator=(String&&) noexcept;
     //destructor
     ~String();
     
@@ -87,7 +91,21 @@ inline String& String::operator=(const String &rhs) {
     cout << "copy assignment" << endl;
     return *this;
 }
- 
+
+inline String::String(String &&s) noexcept: beg(s.beg), end(s.end) {
+    s.beg = s.end = nullptr;
+    cout << "move constructor for " <<*beg<< endl;
+}
+
+inline String& String::operator=(String &&rhs) noexcept {
+    if (this != &rhs) {
+        free_s();
+        beg = rhs.beg;
+        end = rhs.end;
+        rhs.beg = rhs.end = nullptr;
+    }
+    return *this;
+}
  
 inline String::~String() {
     free_s();
