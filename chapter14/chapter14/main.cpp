@@ -13,6 +13,7 @@
 
 using std::cout;
 using std::endl;
+using std::cin;
 
 
 void ex14_01() {
@@ -76,6 +77,30 @@ void ex14_07() {
     cout << a << endl;
 }
 
+void ex14_09() {
+    cout << "-----ex14.9-----" << endl;
+    
+}
+
+void ex14_10() {
+    cout << "-----ex14.10-----" << endl;
+    /**
+    (a) bookNo = "0-201-99999-9"
+        unit_sold = 10
+        revenue = 249.5
+    (b) bookNo = "10"
+        unit_sold = 24
+        revenue = 22.8
+    */
+    Sales_data a;
+    cin >> a;
+    cout << a << endl;
+}
+
+void ex14_11() {
+    cout << "-----ex14.11-----" << endl;
+    // no input fail check
+}
 
 int main(int argc, const char * argv[]) {
 //    ex14_01();
@@ -83,7 +108,9 @@ int main(int argc, const char * argv[]) {
 //    ex14_03();
 //    ex14_04();
 //    ex14_06();
-    ex14_07();
-
+//    ex14_07();
+//    ex14_09();
+//    ex14_10();
+//    ex14_11();
     return 0;
 }
