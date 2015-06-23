@@ -8,6 +8,7 @@
 
 #include <iostream>
 
+#include "String.h"
 #include "Sales_data.h"
 
 using std::cout;
@@ -64,11 +65,25 @@ void ex14_04() {
 }
 
 
-int main(int argc, const char * argv[]) {
-    ex14_01();
-    ex14_02();
-    ex14_03();
-    ex14_04();
+void ex14_06() {
+    cout << "-----ex14.6-----" << endl;
     
+}
+
+void ex14_07() {
+    cout << "-----ex14.7-----" << endl;
+    String a("abv");
+    cout << a << endl;
+}
+
+
+int main(int argc, const char * argv[]) {
+//    ex14_01();
+//    ex14_02();
+//    ex14_03();
+//    ex14_04();
+//    ex14_06();
+    ex14_07();
+
     return 0;
 }
