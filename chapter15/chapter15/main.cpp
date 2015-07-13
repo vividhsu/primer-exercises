@@ -64,6 +64,22 @@ void ex15_07() {
     cout << "-----ex15.7-----" << endl;
 }
 
+void ex15_08() {
+    cout << "-----ex15.8-----" << endl;
+    cout << "static type: it is the type with which a variable is declared or that an expression yield. known at the compile time. \n";
+    cout << "dynamic type: it is the type of the object in memory that the variable or expression represents. known at the run time" << endl;
+}
+
+void ex15_09() {
+    cout << "-----ex15.9-----" << endl;
+    cout << "the static type of a pointer or reference to a base class may differ from its dynamic type" << endl;
+}
+
+void ex15_10() {
+    cout << "-----ex15.10-----" << endl;
+    cout << "ifstream and istringstream inherit from istream, derived-to-base conversion" << endl;
+}
+
 int main(int argc, const char * argv[]) {
 //    ex15_01();
 //    ex15_02();
@@ -72,5 +88,8 @@ int main(int argc, const char * argv[]) {
 //    ex15_05();
 //    ex15_06();
 //    ex15_07();
+//    ex15_08();
+//    ex15_09();
+//    ex15_10();
     return 0;
 }
