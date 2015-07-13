@@ -31,7 +31,46 @@ void ex15_03() {
     
 }
 
+void ex15_04() {
+    cout << "-----ex15.4-----" << endl;
+    /**
+      class Base {...};
+     
+      (a) class Derived: public Derived {...};
+      WRONG: can't derived a class from itself. compiler wont know which members are from base.
+     
+      (b) class Derived: private Base {...};
+      RIGHT.
+     
+      (c) class Derived: public Base;
+      WRONG: derived class declaration contains the class name but does not include its derivation list.
+    */
+}
+
+void ex15_05() {
+    cout << "-----ex15.5-----" << endl;
+}
+
+void ex15_06() {
+    cout << "-----ex15.6-----" << endl;
+    Quote a("11-22-3333", 12.99);
+    Bulk_quote b("22-33-444", 45.69, 50, 0.2);
+    print_total(cout, a, 10);
+    print_total(cout, b, 60);
+    print_total(cout, b, 20);
+}
+
+void ex15_07() {
+    cout << "-----ex15.7-----" << endl;
+}
+
 int main(int argc, const char * argv[]) {
-    
+//    ex15_01();
+//    ex15_02();
+//    ex15_03();
+//    ex15_04();
+//    ex15_05();
+//    ex15_06();
+//    ex15_07();
     return 0;
 }
