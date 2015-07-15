@@ -9,6 +9,9 @@
 #include <iostream>
 
 #include "Quote.h"
+#include "Disc_quote.h"
+#include "Bulk_quote.h"
+#include "Limit_quote.h"
 
 using std::cout;
 using std::endl;
@@ -138,7 +141,25 @@ void ex15_14() {
     
 }
 
+void ex15_15() {
+    cout << "-----ex15.15-----" << endl;
+    Quote a("11-22-3333", 12.99);
+    Bulk_quote b("11-22-333", 12.99, 50, 0.2);
+    print_total(cout, a, 60);
+    print_total(cout, b, 60);
+    print_total(cout, b, 10);
+}
 
+void ex15_16() {
+    cout << "-----ex15.16-----" << endl;
+    Limit_quote c("11-22-333", 12.99, 50, 0.2, 100);
+    print_total(cout, c, 110);
+}
+
+void ex15_17() {
+    cout << "-----ex15.17-----" << endl;
+    // Disc_quote d("11-22-333", 12.99, 50, 0.2);
+}
 
 int main(int argc, const char * argv[]) {
 //    ex15_01();
@@ -155,5 +176,8 @@ int main(int argc, const char * argv[]) {
 //    ex15_12();
 //    ex15_13();
 //    ex15_14();
+//    ex15_15();
+//    ex15_16();
+//    ex15_17();
     return 0;
 }

@@ -30,25 +30,32 @@ protected:
     double price = 0.0;
 };
 
+
+/**
+
 class Bulk_quote: public Quote {
 public:
     Bulk_quote() = default;
     Bulk_quote(const string &book, double sales_price, size_t qty, double disc): Quote(book, sales_price), min_qty(qty), discount(disc) {}
-    double net_price(size_t n);
+    double net_price(size_t n) const;
     void debug() const override;
 protected:
     size_t min_qty = 0;
     double discount = 0.0;
 };
 
+
+
 class Limit_Quote: public Bulk_quote {
 public:
     Limit_Quote() = default;
     Limit_Quote(const string& book, double p, size_t qty, double disc, size_t limit): Bulk_quote(book, p, qty, disc), limit_qty(limit) {}
-    double net_price(size_t n);
+    double net_price(size_t n) const;
 private:
     size_t limit_qty = 0;
 };
+ 
+*/
 
 double print_total (ostream &os, const Quote &item, size_t n);
 

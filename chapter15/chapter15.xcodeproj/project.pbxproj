@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		5E3D84631B537DCF00FACBAD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D84621B537DCF00FACBAD /* main.cpp */; };
 		5E3D846B1B537F9400FACBAD /* Quote.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D84691B537F9400FACBAD /* Quote.cpp */; };
+		5E3D84711B5716CE00FACBAD /* Disc_quote.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D846F1B5716CE00FACBAD /* Disc_quote.cpp */; };
+		5E3D84741B5717DE00FACBAD /* Bulk_quote.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D84721B5717DE00FACBAD /* Bulk_quote.cpp */; };
+		5E3D84771B57183A00FACBAD /* Limit_quote.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D84751B57183A00FACBAD /* Limit_quote.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +31,12 @@
 		5E3D84621B537DCF00FACBAD /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		5E3D84691B537F9400FACBAD /* Quote.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Quote.cpp; sourceTree = "<group>"; };
 		5E3D846A1B537F9400FACBAD /* Quote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quote.h; sourceTree = "<group>"; };
+		5E3D846F1B5716CE00FACBAD /* Disc_quote.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Disc_quote.cpp; sourceTree = "<group>"; };
+		5E3D84701B5716CE00FACBAD /* Disc_quote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Disc_quote.h; sourceTree = "<group>"; };
+		5E3D84721B5717DE00FACBAD /* Bulk_quote.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bulk_quote.cpp; sourceTree = "<group>"; };
+		5E3D84731B5717DE00FACBAD /* Bulk_quote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bulk_quote.h; sourceTree = "<group>"; };
+		5E3D84751B57183A00FACBAD /* Limit_quote.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Limit_quote.cpp; sourceTree = "<group>"; };
+		5E3D84761B57183A00FACBAD /* Limit_quote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Limit_quote.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +72,12 @@
 				5E3D84621B537DCF00FACBAD /* main.cpp */,
 				5E3D84691B537F9400FACBAD /* Quote.cpp */,
 				5E3D846A1B537F9400FACBAD /* Quote.h */,
+				5E3D846F1B5716CE00FACBAD /* Disc_quote.cpp */,
+				5E3D84701B5716CE00FACBAD /* Disc_quote.h */,
+				5E3D84721B5717DE00FACBAD /* Bulk_quote.cpp */,
+				5E3D84731B5717DE00FACBAD /* Bulk_quote.h */,
+				5E3D84751B57183A00FACBAD /* Limit_quote.cpp */,
+				5E3D84761B57183A00FACBAD /* Limit_quote.h */,
 			);
 			path = chapter15;
 			sourceTree = "<group>";
@@ -125,6 +140,9 @@
 			files = (
 				5E3D846B1B537F9400FACBAD /* Quote.cpp in Sources */,
 				5E3D84631B537DCF00FACBAD /* main.cpp in Sources */,
+				5E3D84741B5717DE00FACBAD /* Bulk_quote.cpp in Sources */,
+				5E3D84711B5716CE00FACBAD /* Disc_quote.cpp in Sources */,
+				5E3D84771B57183A00FACBAD /* Limit_quote.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
