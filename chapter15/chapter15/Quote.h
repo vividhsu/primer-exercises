@@ -22,6 +22,7 @@ public:
     Quote(const string &book, double sales_price): bookNo(book), price(sales_price) {}
     string isbn() const {return bookNo; }
     virtual double net_price(size_t n) const { return n * price; }
+    virtual void debug() const;
     virtual ~Quote() = default;
 private:
     string bookNo;
@@ -34,6 +35,7 @@ public:
     Bulk_quote() = default;
     Bulk_quote(const string &book, double sales_price, size_t qty, double disc): Quote(book, sales_price), min_qty(qty), discount(disc) {}
     double net_price(size_t n);
+    void debug() const override;
 protected:
     size_t min_qty = 0;
     double discount = 0.0;

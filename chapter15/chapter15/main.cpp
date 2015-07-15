@@ -80,6 +80,66 @@ void ex15_10() {
     cout << "ifstream and istringstream inherit from istream, derived-to-base conversion" << endl;
 }
 
+void ex15_11() {
+    cout << "-----ex15.11-----" << endl;
+    Quote a("11-22-3333", 12.99);
+    Bulk_quote b("22-33-444", 45.69, 50, 0.2);
+    a.debug();
+    b.debug();
+}
+
+void ex15_12() {
+    cout << "-----ex15.12-----" << endl;
+    cout << "Yes, it is useful. declare a member function both override and final means this member function is derived from base class and also other derived class from this class can't override the function. " << endl;
+}
+
+/**
+
+class base {
+public:
+    string name() { return basename; }
+    virtual void print(ostream &os) { os << basename; }
+private:
+    string basename;
+};
+
+class derived: public base {
+public:
+    void print(ostream &os) { base::print(os); os << " " << i; }
+private:
+    int i;
+};
+
+base bobj;
+derived dobj;
+
+base *bp1 = &bobj;
+base *bp2 = &dobj;
+base &br1 = bobj;
+base &br2 = dobj;
+
+bobj.print();  // compile time
+dobj.print();  // compile time
+bp1 -> name(); // compile time
+bp2 -> name(); // compile time
+br1.print();   // run time
+br2.print();   // run time
+ 
+*/
+
+void ex15_13() {
+    cout << "-----ex15.13-----" << endl;
+
+}
+
+void ex15_14() {
+    cout << "-----ex15.14-----" << endl;
+    
+    
+}
+
+
+
 int main(int argc, const char * argv[]) {
 //    ex15_01();
 //    ex15_02();
@@ -91,5 +151,9 @@ int main(int argc, const char * argv[]) {
 //    ex15_08();
 //    ex15_09();
 //    ex15_10();
+//    ex15_11();
+//    ex15_12();
+//    ex15_13();
+//    ex15_14();
     return 0;
 }

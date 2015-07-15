@@ -8,12 +8,20 @@
 
 #include "Quote.h"
 
+void Quote::debug() const {
+    std::cout << "bookNo: " << isbn() << ", price: " << price << "." << std::endl;
+}
+
 double Bulk_quote::net_price(size_t n) {
     if (n >= min_qty) {
         return n * (1 - discount) * price;
     }
     else
         return n * price;
+}
+
+void Bulk_quote::debug() const {
+    std::cout << "bookNo: " << isbn() << ", price: " << price << ", min_qty: " << min_qty << ", discount: " << discount << "." << std::endl;
 }
 
 double Limit_Quote::net_price(size_t n) {
