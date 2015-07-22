@@ -161,6 +161,75 @@ void ex15_17() {
     // Disc_quote d("11-22-333", 12.99, 50, 0.2);
 }
 
+/**
+class Base {
+public:
+    void pub_mem();   // public member
+protected:
+    int prot_mem;     // protected member
+private:
+    char priv_mem;    // private member
+};
+
+class Pub_Derv: public Base {
+public:
+    void memfcn(Base &b) { b = *this; }             // legal
+};
+
+class Priv_Derv: private Base {
+public:
+    void memfcn(Base &b) { b = *this; }             // legal
+};
+
+class Prot_Derv: protected Base {
+public:
+    void memfcn(Base &b) { b = *this; }             // legal
+};
+
+class Derived_from_Public: public Pub_Derv {
+public:
+    void memfcn(Base &b) { b = *this; }             // legal
+};
+class Derived_from_Private: public Priv_Derv {
+public:
+    void memfcn(Base &b) { b = *this; }             // illegal
+};
+class Derived_from_Protected: public Prot_Derv {
+public:
+    void memfcn(Base &b) { b = *this; }             // legal
+};
+
+Base *p;
+Pub_Derv d1;
+Priv_Derv d2;
+Prot_Derv d3;
+Derived_from_Public dd1;
+Derived_from_Private dd2;
+Derived_from_Protected dd3;
+
+p = &d1;     // legal
+p = &d2;     // illegal
+p = &d3;     // illegal
+p = &dd1;    // legal
+p = &dd2;    // illegal
+p = &dd3;    // illegal
+*/
+
+
+void ex15_18() {
+    cout << "-----ex15.18-----" << endl;
+}
+
+void ex15_19() {
+    cout << "-----ex15.19-----" << endl;
+}
+
+void ex15_20() {
+    cout << "-----ex15.20-----" << endl;
+}
+
+
+
 int main(int argc, const char * argv[]) {
 //    ex15_01();
 //    ex15_02();
@@ -179,5 +248,8 @@ int main(int argc, const char * argv[]) {
 //    ex15_15();
 //    ex15_16();
 //    ex15_17();
+//    ex15_18();
+//    ex15_19();
+//    ex15_20();
     return 0;
 }
