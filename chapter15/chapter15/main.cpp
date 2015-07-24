@@ -228,6 +228,65 @@ void ex15_20() {
     cout << "-----ex15.20-----" << endl;
 }
 
+/**
+class Base {
+public:
+    virtual int fcn();
+};
+
+class D1: public Base {
+    int fcn();
+    virtual void f2();
+};
+
+class D2: public D1 {
+    int fcn();
+    void f2();
+};
+*/
+
+void ex15_23() {
+    cout << "-----ex15.23-----" << endl;
+}
+
+void ex15_24() {
+    cout << "-----ex15.24-----" << endl;
+    cout << "A base class generally should define a virtual destructor. The destructor needs to be virtual to allow objects in the inheritance hierarchy to be dynamically allocated." << endl;
+}
+
+void ex15_25() {
+    cout << "-----ex15.25-----" << endl;
+    cout << "When we initialize the Bulk_quote, it called the default constructor of Disc_quote to initialize the members." << endl;
+}
+
+void ex15_26() {
+    cout << "-----ex15.26-----" << endl;
+    Quote a;
+    std::cout << "----------" << std::endl;
+    Quote b(a);
+    std::cout << "----------" << std::endl;
+    Quote c;
+    c = a;
+    std::cout << "----------" << std::endl;
+    Quote d = std::move(a);
+    std::cout << "----------" << std::endl;
+    Bulk_quote ab("22-33", 3.99, 20, 0.2);
+    std::cout << "----------" << std::endl;
+    Bulk_quote bb(ab);
+    std::cout << "----------" << std::endl;
+    Bulk_quote cb;
+    cb = ab;
+    std::cout << "----------" << std::endl;
+    Bulk_quote db = std::move(ab);
+    std::cout << "----------" << std::endl;
+}
+
+void ex15_27() {
+    cout << "-----ex15.27-----" << endl;
+    Bulk_quote ab("22-33", 3.99, 20, 0.2);
+    Bulk_quote bb(ab);
+}
+
 
 
 int main(int argc, const char * argv[]) {
@@ -251,5 +310,10 @@ int main(int argc, const char * argv[]) {
 //    ex15_18();
 //    ex15_19();
 //    ex15_20();
+//    ex15_23();
+//    ex15_24();
+//    ex15_25();
+//    ex15_26();
+//    ex15_27();
     return 0;
 }

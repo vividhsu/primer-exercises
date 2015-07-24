@@ -14,12 +14,35 @@
 
 using std::string;
 using std::ostream;
+using std::cout;
 using std::endl;
 
 class Quote {
 public:
     Quote() = default;
     Quote(const string &book, double sales_price): bookNo(book), price(sales_price) {}
+    // copy constructor
+    Quote(const Quote& item): bookNo(item.bookNo), price(item.price)
+    { cout << "Quote: copy constructor" << endl; }
+    // move constructor
+    Quote(Quote&& item) noexcept:bookNo(std::move(item.bookNo)), price(std::move(item.price))
+    {cout << "Quote: move constructor" << endl;}
+    // copy assignment
+    Quote& operator=(const Quote& rhs) {
+        bookNo = rhs.bookNo;
+        price = rhs.price;
+        cout << "Quote: copy assignment" << endl;
+        return *this;
+    }
+    // move assignment
+    Quote& operator=(Quote&& rhs) noexcept {
+        if (this != &rhs) {
+            bookNo = std::move(rhs.bookNo);
+            price = std::move(rhs.price);
+        }
+        cout << "Quote: move assignment" << endl;
+        return *this;
+    }
     string isbn() const {return bookNo; }
     virtual double net_price(size_t n) const { return n * price; }
     virtual void debug() const;
