@@ -14,20 +14,24 @@
 
 class Bulk_quote: public Disc_quote {
 public:
-    using Disc_quote::Disc_quote;
+    // using Disc_quote::Disc_quote;
     Bulk_quote() = default;
-    //Bulk_quote(const string& book, double price, size_t qty, double disc): Disc_quote(book, price, qty, disc) {}
+    Bulk_quote(const string& book, double price, size_t qty, double disc): Disc_quote(book, price, qty, disc) {}
 
     // copy constructor
     Bulk_quote(const Bulk_quote& item): Disc_quote(item)
-    { cout << "Bulk_quote: copy constructor" << endl; }
+    {
+        //cout << "Bulk_quote: copy constructor" << endl;
+    }
     // move constructor
     Bulk_quote(Bulk_quote&& item) noexcept:Disc_quote(std::move(item))
-    {cout << "Bulk_quote: move constructor" << endl;}
+    {
+        //cout << "Bulk_quote: move constructor" << endl;
+    }
     // copy assignment
     Bulk_quote& operator=(const Bulk_quote& rhs) {
         Disc_quote::operator=(rhs);
-        cout << "Bulk_quote: copy assignment" << endl;
+        //cout << "Bulk_quote: copy assignment" << endl;
         return *this;
     }
     // move assignment
@@ -35,12 +39,14 @@ public:
         if (this != &rhs) {
             Disc_quote::operator=(std::move(rhs));
         }
-        cout << "Bulk_quote: move assignment" << endl;
+        //cout << "Bulk_quote: move assignment" << endl;
         return *this;
     }
 
     
     double net_price(size_t n) const override;
+    Bulk_quote* clone() const & { return new Bulk_quote(*this); }
+    Bulk_quote* clone() && { return new Bulk_quote(std::move(*this)); }
 };
 
 #endif /* defined(__chapter15__Bulk_quote__) */

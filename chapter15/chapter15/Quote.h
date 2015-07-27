@@ -26,12 +26,14 @@ public:
     { cout << "Quote: copy constructor" << endl; }
     // move constructor
     Quote(Quote&& item) noexcept:bookNo(std::move(item.bookNo)), price(std::move(item.price))
-    {cout << "Quote: move constructor" << endl;}
+    {
+        //cout << "Quote: move constructor" << endl;
+    }
     // copy assignment
     Quote& operator=(const Quote& rhs) {
         bookNo = rhs.bookNo;
         price = rhs.price;
-        cout << "Quote: copy assignment" << endl;
+        //cout << "Quote: copy assignment" << endl;
         return *this;
     }
     // move assignment
@@ -43,10 +45,13 @@ public:
         cout << "Quote: move assignment" << endl;
         return *this;
     }
+    virtual ~Quote() = default;
+    
     string isbn() const {return bookNo; }
     virtual double net_price(size_t n) const { return n * price; }
     virtual void debug() const;
-    virtual ~Quote() = default;
+    virtual Quote* clone() const & { return new Quote(*this); }
+    virtual Quote* clone() && { return new Quote(std::move(*this)); }
 private:
     string bookNo;
 protected:

@@ -7,15 +7,21 @@
 //
 
 #include <iostream>
-
+#include <vector>
+#include <memory>
 #include "Quote.h"
 #include "Disc_quote.h"
 #include "Bulk_quote.h"
 #include "Limit_quote.h"
+#include "Basket.h"
 
 using std::cout;
 using std::endl;
 using std::cin;
+using std::vector;
+using std::shared_ptr;
+using std::make_shared;
+
 
 
 void ex15_01() {
@@ -287,6 +293,43 @@ void ex15_27() {
     Bulk_quote bb(ab);
 }
 
+void ex15_28() {
+    cout << "-----ex15.28-----" << endl;
+    vector<Quote> basket;
+    basket.push_back(Quote("11-222", 35.99));
+    basket.push_back(Bulk_quote("11-222", 35.99, 20, 0.1));
+    cout << basket[0].net_price(50) << endl;
+    cout << basket[1].net_price(50) << endl;
+}
+
+void ex15_29() {
+    cout << "-----ex15.29-----" << endl;
+    vector<shared_ptr<Quote>> basket;
+    basket.push_back(make_shared<Quote>("11-222", 35.99));
+    basket.push_back(make_shared<Bulk_quote>("11-222", 35.99, 20, 0.1));
+    cout << basket[0] -> net_price(50) << endl;
+    cout << basket[1] -> net_price(50) << endl;
+}
+
+void ex15_30() {
+    cout << "-----ex15.30-----" << endl;
+    Basket bsk;
+    bsk.add_item(Quote("11-222", 35.99));
+    bsk.add_item(Bulk_quote("11-222", 35.99, 20, 0.1));
+    double sum = bsk.total_receipt(cout);
+}
+
+void ex15_31() {
+    cout << "-----ex15.31-----" << endl;
+    /**
+    (a) Query(s1) | Query(s2) & ~ Query(s3)
+        OrQuery AndQuery NotQuery WordQuery
+    (b) Query(s1) | (Query(s2) & ~ Query(s3))
+        AndQuery NotQuery OrQuery WordQuery
+    (c) (Query(s1) & (Query(s2)) | (Query(s3) & Query(s4)))
+        AndQuery AndQuery OrQuery
+    */
+}
 
 
 int main(int argc, const char * argv[]) {
@@ -315,5 +358,9 @@ int main(int argc, const char * argv[]) {
 //    ex15_25();
 //    ex15_26();
 //    ex15_27();
+//    ex15_28();
+//    ex15_29();
+//    ex15_30();
+//    ex15_31();
     return 0;
 }
