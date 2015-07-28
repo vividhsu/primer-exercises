@@ -9,4 +9,4 @@ project chapter13 is answers for chapter 13.(skip 13.4, 13.7, 13.10, 13.20, 13.2
 
 (to be continue) project chapter14 is answers for chapter 14.(skip 14.5, 14.8, 14.12)
 
-project chapter15 is answers for chapter 15.(skip 15.21, 15.22, 15.32, 15.33)
+project chapter15 is answers for chapter 15.(skip 15.21, 15.22, 15.32, 15.33, 15.37, 15.41, 15.42)
