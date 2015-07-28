@@ -9,11 +9,20 @@
 #include <iostream>
 #include <vector>
 #include <memory>
+#include <fstream>
+
 #include "Quote.h"
 #include "Disc_quote.h"
 #include "Bulk_quote.h"
 #include "Limit_quote.h"
 #include "Basket.h"
+#include "Query.h"
+#include "WordQuery.h"
+#include "NotQuery.h"
+#include "AndQuery.h"
+#include "OrQuery.h"
+#include "TextQuery.h"
+#include "QueryResult.h"
 
 using std::cout;
 using std::endl;
@@ -21,7 +30,7 @@ using std::cin;
 using std::vector;
 using std::shared_ptr;
 using std::make_shared;
-
+using std::ifstream;
 
 
 void ex15_01() {
@@ -331,6 +340,89 @@ void ex15_31() {
     */
 }
 
+void ex15_34() {
+    cout << "-----ex15.34-----" << endl;
+    /**
+    Query q = Query("fiery") & Query("bird") | Query("wind");
+    (a)
+     WordQuery::WordQuery(const string&): fiery
+     Query::Query(const string&)
+     WordQuery::WordQuery(const string&): bird
+     Query::Query(const string&)
+     BinaryQuery::BinaryQuery(const Query&, const Query&, string)
+     AndQuery::AndQuery(const Query&, const Query&)
+     Query::Query(shared_ptr<Query_base>)
+     WordQuery::WordQuery(const string&): wind
+     Query::Query(const string&)
+     BinaryQuery::BinaryQuery(const Query&, const Query&, string)
+     OrQuery::OrQuery(const Query&, const Query&)
+     Query::Query(shared_ptr<Query_base>)
+     (b)
+     Query rep
+     BinaryQuery rep
+     Query rep
+     BinaryQuery rep
+     Query rep
+     WordQuery rep
+     Query rep
+     WordQuery rep
+     Query rep
+     WordQuery rep
+     (c)
+     Query eval
+     OrQuery eval
+     Query eval
+     AndQuery eval
+     Query eval
+     WordQuery eval
+     Query eval
+     WordQuery eval
+     Query eval
+     WordQuery eval
+    */
+}
+
+void ex15_35() {
+    cout << "-----ex15.35-----" << endl;
+
+}
+
+void ex15_36(const char* title) {
+    cout << "-----ex15.36-----" << endl;
+    Query q = Query("fiery") & Query("bird") | Query("wind");
+    q.rep();
+    ifstream is(title);
+    TextQuery text(is);
+    q.eval(text);
+}
+
+void ex15_38() {
+    cout << "-----ex15.38-----" << endl;
+    /**
+    BinaryQuery a = Query("fiery") & Query("bird");
+    illegal, BinaryQuery is an abstract class
+    AndQuery b = Query("fiery") & Query("bird");
+    legal
+    OrQuery c = Query("fiery") & Query("bird");
+    illegal, right side is an AndQuery, no conversion from AndQuery to OrQuery
+    */
+}
+
+void ex15_39(const char* title) {
+    cout << "-----ex15.39-----" << endl;
+    ifstream is(title);
+    TextQuery text(is);
+    
+    Query q = Query("fiery") & Query("bird") | Query("wind");
+    QueryResult res = q.eval(text);
+    
+    print(cout, res);
+}
+
+void ex15_40() {
+    cout << "-----ex15.40-----" << endl;
+    cout << "still work." << endl;
+}
 
 int main(int argc, const char * argv[]) {
 //    ex15_01();
@@ -362,5 +454,11 @@ int main(int argc, const char * argv[]) {
 //    ex15_29();
 //    ex15_30();
 //    ex15_31();
+//    ex15_34();
+//    ex15_35();
+//    ex15_36(argv[1]);
+//    ex15_38();
+//    ex15_39(argv[1]);
+//    ex15_40();
     return 0;
 }

@@ -12,17 +12,22 @@
 		5E3D84711B5716CE00FACBAD /* Disc_quote.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D846F1B5716CE00FACBAD /* Disc_quote.cpp */; };
 		5E3D84741B5717DE00FACBAD /* Bulk_quote.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D84721B5717DE00FACBAD /* Bulk_quote.cpp */; };
 		5E3D84771B57183A00FACBAD /* Limit_quote.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D84751B57183A00FACBAD /* Limit_quote.cpp */; };
+		5E3D84801B659AB000FACBAD /* Basket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D847E1B659AB000FACBAD /* Basket.cpp */; };
+		5E3D84831B66E91300FACBAD /* TextQuery.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D84811B66E91300FACBAD /* TextQuery.cpp */; };
+		5E3D84861B66E92300FACBAD /* QueryResult.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D84841B66E92300FACBAD /* QueryResult.cpp */; };
+		5E3D849D1B6751F800FACBAD /* section15_9.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5E3D849C1B6751DC00FACBAD /* section15_9.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		5E3D845D1B537DCF00FACBAD /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
 			files = (
+				5E3D849D1B6751F800FACBAD /* section15_9.txt in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -37,6 +42,20 @@
 		5E3D84731B5717DE00FACBAD /* Bulk_quote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bulk_quote.h; sourceTree = "<group>"; };
 		5E3D84751B57183A00FACBAD /* Limit_quote.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Limit_quote.cpp; sourceTree = "<group>"; };
 		5E3D84761B57183A00FACBAD /* Limit_quote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Limit_quote.h; sourceTree = "<group>"; };
+		5E3D847E1B659AB000FACBAD /* Basket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Basket.cpp; sourceTree = "<group>"; };
+		5E3D847F1B659AB000FACBAD /* Basket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Basket.h; sourceTree = "<group>"; };
+		5E3D84811B66E91300FACBAD /* TextQuery.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextQuery.cpp; sourceTree = "<group>"; };
+		5E3D84821B66E91300FACBAD /* TextQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextQuery.h; sourceTree = "<group>"; };
+		5E3D84841B66E92300FACBAD /* QueryResult.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QueryResult.cpp; sourceTree = "<group>"; };
+		5E3D84851B66E92300FACBAD /* QueryResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueryResult.h; sourceTree = "<group>"; };
+		5E3D84881B66F47200FACBAD /* Query.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Query.h; sourceTree = "<group>"; };
+		5E3D848B1B66F53900FACBAD /* Query_base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Query_base.h; sourceTree = "<group>"; };
+		5E3D848E1B66F99C00FACBAD /* WordQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordQuery.h; sourceTree = "<group>"; };
+		5E3D84911B66FBE000FACBAD /* NotQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotQuery.h; sourceTree = "<group>"; };
+		5E3D84941B66FDB900FACBAD /* BinaryQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BinaryQuery.h; sourceTree = "<group>"; };
+		5E3D84971B67026C00FACBAD /* AndQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AndQuery.h; sourceTree = "<group>"; };
+		5E3D849A1B67027C00FACBAD /* OrQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrQuery.h; sourceTree = "<group>"; };
+		5E3D849C1B6751DC00FACBAD /* section15_9.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = section15_9.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,14 +89,28 @@
 			isa = PBXGroup;
 			children = (
 				5E3D84621B537DCF00FACBAD /* main.cpp */,
-				5E3D84691B537F9400FACBAD /* Quote.cpp */,
+				5E3D847F1B659AB000FACBAD /* Basket.h */,
+				5E3D847E1B659AB000FACBAD /* Basket.cpp */,
 				5E3D846A1B537F9400FACBAD /* Quote.h */,
-				5E3D846F1B5716CE00FACBAD /* Disc_quote.cpp */,
+				5E3D84691B537F9400FACBAD /* Quote.cpp */,
 				5E3D84701B5716CE00FACBAD /* Disc_quote.h */,
-				5E3D84721B5717DE00FACBAD /* Bulk_quote.cpp */,
+				5E3D846F1B5716CE00FACBAD /* Disc_quote.cpp */,
 				5E3D84731B5717DE00FACBAD /* Bulk_quote.h */,
-				5E3D84751B57183A00FACBAD /* Limit_quote.cpp */,
+				5E3D84721B5717DE00FACBAD /* Bulk_quote.cpp */,
 				5E3D84761B57183A00FACBAD /* Limit_quote.h */,
+				5E3D84751B57183A00FACBAD /* Limit_quote.cpp */,
+				5E3D84821B66E91300FACBAD /* TextQuery.h */,
+				5E3D84811B66E91300FACBAD /* TextQuery.cpp */,
+				5E3D84851B66E92300FACBAD /* QueryResult.h */,
+				5E3D84841B66E92300FACBAD /* QueryResult.cpp */,
+				5E3D84881B66F47200FACBAD /* Query.h */,
+				5E3D848B1B66F53900FACBAD /* Query_base.h */,
+				5E3D848E1B66F99C00FACBAD /* WordQuery.h */,
+				5E3D84911B66FBE000FACBAD /* NotQuery.h */,
+				5E3D84941B66FDB900FACBAD /* BinaryQuery.h */,
+				5E3D84971B67026C00FACBAD /* AndQuery.h */,
+				5E3D849A1B67027C00FACBAD /* OrQuery.h */,
+				5E3D849C1B6751DC00FACBAD /* section15_9.txt */,
 			);
 			path = chapter15;
 			sourceTree = "<group>";
@@ -139,8 +172,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E3D846B1B537F9400FACBAD /* Quote.cpp in Sources */,
+				5E3D84801B659AB000FACBAD /* Basket.cpp in Sources */,
+				5E3D84831B66E91300FACBAD /* TextQuery.cpp in Sources */,
 				5E3D84631B537DCF00FACBAD /* main.cpp in Sources */,
 				5E3D84741B5717DE00FACBAD /* Bulk_quote.cpp in Sources */,
+				5E3D84861B66E92300FACBAD /* QueryResult.cpp in Sources */,
 				5E3D84711B5716CE00FACBAD /* Disc_quote.cpp in Sources */,
 				5E3D84771B57183A00FACBAD /* Limit_quote.cpp in Sources */,
 			);
