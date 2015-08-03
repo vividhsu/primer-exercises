@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5E3D84AB1B6B029300FACBAD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D84AA1B6B029300FACBAD /* main.cpp */; };
-		5E3D84B31B6B060400FACBAD /* Sales_data.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D84B11B6B060400FACBAD /* Sales_data.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,8 +25,10 @@
 /* Begin PBXFileReference section */
 		5E3D84A71B6B029300FACBAD /* chapter16 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = chapter16; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E3D84AA1B6B029300FACBAD /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		5E3D84B11B6B060400FACBAD /* Sales_data.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sales_data.cpp; sourceTree = "<group>"; };
 		5E3D84B21B6B060400FACBAD /* Sales_data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sales_data.h; sourceTree = "<group>"; };
+		5E3D84B51B6D79D200FACBAD /* Blob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Blob.h; sourceTree = "<group>"; };
+		5E3D84BB1B6ED20300FACBAD /* Screen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Screen.h; sourceTree = "<group>"; };
+		5E3D84BE1B6EDDC600FACBAD /* Vec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vec.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +62,10 @@
 			isa = PBXGroup;
 			children = (
 				5E3D84AA1B6B029300FACBAD /* main.cpp */,
-				5E3D84B11B6B060400FACBAD /* Sales_data.cpp */,
 				5E3D84B21B6B060400FACBAD /* Sales_data.h */,
+				5E3D84B51B6D79D200FACBAD /* Blob.h */,
+				5E3D84BB1B6ED20300FACBAD /* Screen.h */,
+				5E3D84BE1B6EDDC600FACBAD /* Vec.h */,
 			);
 			path = chapter16;
 			sourceTree = "<group>";
@@ -123,7 +126,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E3D84B31B6B060400FACBAD /* Sales_data.cpp in Sources */,
 				5E3D84AB1B6B029300FACBAD /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

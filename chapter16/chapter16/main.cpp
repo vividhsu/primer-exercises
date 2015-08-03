@@ -11,6 +11,10 @@
 #include <list>
 
 #include "Sales_data.h"
+#include "Blob.h"
+#include "Screen.h"
+#include "Vec.h"
+
 
 using std::cout;
 using std::endl;
@@ -129,6 +133,82 @@ void ex16_08() {
     cout << "all the container defines !=, easy to implement the template" << endl;
 }
 
+void ex16_09() {
+    cout << "-----ex16.9-----" << endl;
+    cout << "function template is a blueprint for generating functions. definition from which specific functions can be instantiated; \n";
+    cout << "class template is a blueprint for generating classes. definition from which specific class can be instantiated" << endl;
+}
+
+void ex16_10() {
+    cout << "-----ex16.10-----" << endl;
+    cout << "when the compiler instantiates a class from template, it rewrites the class template, replacing each instance of the template parameter by the given template argument." << endl;
+}
+
+template <typename elemType> class ListItem;
+template <typename elemType> class List {
+public:
+    List<elemType>();
+    List<elemType>(const List<elemType>&);
+    list<elemType>& operator=(const List<elemType>&);
+    ~List();
+    
+    void insert(ListItem<elemType> *ptr, elemType value);
+
+private:
+    ListItem<elemType> *front, *end;
+};
+
+void ex16_11() {
+    cout << "-----ex16.11-----" << endl;
+    
+}
+
+void ex16_12() {
+    cout << "-----ex16.12-----" << endl;
+    Blob<int> a;
+    a.push_back(1);
+    a.push_back(2);
+    cout << a.at(0) << endl;
+    BlobPtr<int> ap(a);
+    ap++;
+    cout << *ap << endl;    
+}
+
+void ex16_13() {
+    cout << "-----ex16.13-----" << endl;
+    initializer_list<int> temp = {1, 2};
+    Blob<int> a(temp);
+    BlobPtr<int> ap(a);
+    Blob<int> b(temp);
+    BlobPtr<int> bp(a);
+    cout << (ap == bp) << endl;
+}
+
+void ex16_14() {
+    cout << "-----ex16.14-----" << endl;
+    
+}
+
+void ex16_15() {
+    cout << "-----ex16.15-----" << endl;
+    Screen<5,5> scr('c');
+    Screen<5,5> scr2;
+    
+    // output src to the screen
+    std::cout<<scr;
+    // input connet  to the  src
+    std::cin>>scr2;
+    // test input
+    std::cout<<scr2;
+}
+
+void ex16_16() {
+    cout << "-----ex16.16-----" << endl;
+    Vec<int> vi;
+    vi.push_back(1);
+}
+
+
 int main(int argc, const char * argv[]) {
 //    ex16_01();
 //    ex16_02();
@@ -138,5 +218,13 @@ int main(int argc, const char * argv[]) {
 //    ex16_06();
 //    ex16_07();
 //    ex16_08();
+//    ex16_09();
+//    ex16_10();
+//    ex16_11();
+//    ex16_12();
+//    ex16_13();
+//    ex16_14();
+//    ex16_15();
+//    ex16_16();
     return 0;
 }
