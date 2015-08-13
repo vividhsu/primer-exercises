@@ -293,6 +293,19 @@ void ex16_24() {
     Blob<int> vi(vs.begin(), vs.end());
 }
 
+void ex16_25() {
+    cout << "-----ex16.25-----" << endl;
+    /**
+    // instantiation declaration. compiler won't generate code for that instaintiation in that file.
+    extern template class vector<string>;
+    // instantiation definition. compiler instantiates all members.
+    template class vector<Sales_data>;
+    */
+}
+
+
+
+
 int main(int argc, const char * argv[]) {
 //    ex16_01();
 //    ex16_02();
@@ -317,6 +330,7 @@ int main(int argc, const char * argv[]) {
 //    ex16_21();
 //    ex16_22(argv[1]);
 //    ex16_23();
-    ex16_24();
+//    ex16_24();
+//    ex16_25();
     return 0;
 }
