@@ -9,17 +9,21 @@
 #include <iostream>
 #include <vector>
 #include <list>
+#include <fstream>
 
 #include "Sales_data.h"
 #include "Blob.h"
 #include "Screen.h"
 #include "Vec.h"
+#include "TextQuery.h"
+#include "QueryResult.h"
 
 
 using std::cout;
 using std::endl;
 using std::vector;
 using std::list;
+using std::ifstream;
 
 void ex16_01() {
     cout << "-----ex16.1-----" << endl;
@@ -208,6 +212,86 @@ void ex16_16() {
     vi.push_back(1);
 }
 
+void ex16_17() {
+    cout << "-----ex16.17-----" << endl;
+    cout << "when we want to inform the compiler that a name represents a type, we must use the keyword typename, not class." << endl;
+}
+
+
+void ex16_18() {
+    cout << "-----ex16.18-----" << endl;
+    /**
+    (1) template <typename T, U, typename V> void f1(T, U, V);
+    illegal. template <typename T, typename U, typename V> void f1(T, U, V);
+    
+    (2) template <typename T> T f2(int &T);
+    illegal. template <typename T> T f2(T&);
+     
+    (3) inline template <typename T> T foo(T, unsigned int*);
+    illegal. template <typename T> inline T foo(T, unsigned int*);
+     
+    (4) template <typename T> f4(T, T);
+    illegal. template <typename T> T f4(T, T);
+     
+    (5) typedef char Ctype;
+        template <typename Ctype> Ctype f5(Ctype a);
+     illegal. typedef char C;
+               template <typename Ctype> Ctype f5(Ctype a);
+     
+     */
+}
+
+template <typename T>
+void print19(T& container) {
+    for (typename T::size_type i = 0; i != container.size(); i++) {
+        cout << container[i] << " ";
+    }
+    cout << endl;
+}
+
+void ex16_19() {
+    cout << "-----ex16.19-----" << endl;
+    vector<int> a = {1,2,3,4};
+    print19(a);
+}
+
+template <typename T>
+void print20(T& container) {
+    for (auto it = container.begin(); it != container.end(); it++) {
+        cout << *it << " ";
+    }
+    cout << endl;
+}
+
+void ex16_20() {
+    cout << "-----ex16.20-----" << endl;
+    vector<int> a = {1,2,3,4};
+    print20(a);
+}
+
+void ex16_21() {
+    cout << "-----ex16.21-----" << endl;
+    
+}
+
+void ex16_22(const char* input) {
+    cout << "-----ex16.22-----" << endl;
+    ifstream file(input);
+    TextQuery a(file);
+    QueryResult res = a.query("article");
+    print(cout, res);
+    cout << "end of 16.22" << endl;
+}
+
+void ex16_23() {
+    cout << "-----ex16.23-----" << endl;
+}
+
+void ex16_24() {
+    cout << "-----ex16.24-----" << endl;
+    vector<short> vs = {1,2,3};
+    Blob<int> vi(vs.begin(), vs.end());
+}
 
 int main(int argc, const char * argv[]) {
 //    ex16_01();
@@ -226,5 +310,13 @@ int main(int argc, const char * argv[]) {
 //    ex16_14();
 //    ex16_15();
 //    ex16_16();
+//    ex16_17();
+//    ex16_18();
+//    ex16_19();
+//    ex16_20();
+//    ex16_21();
+//    ex16_22(argv[1]);
+//    ex16_23();
+    ex16_24();
     return 0;
 }

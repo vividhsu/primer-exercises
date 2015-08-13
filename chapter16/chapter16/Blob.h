@@ -30,6 +30,9 @@ public:
     // constructor
     Blob();
     Blob(initializer_list<T> il);
+    template <typename IT>
+    Blob(IT b, IT e): data(make_shared<vector<T>>(b, e)) {}
+    
     
     // number of elements in the Blob
     size_type size() const { return data -> size(); }
