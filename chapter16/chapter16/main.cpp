@@ -303,7 +303,74 @@ void ex16_25() {
     */
 }
 
+void ex16_32() {
+    cout << "-----ex16.32-----" << endl;
+    cout << "During template argument deduction, the compiler uses types of the arguments in the call to find the template arguments that generates a version of the function that best matches the given call." << endl;
+}
 
+void ex16_33() {
+    cout << "-----ex16.33-----" << endl;
+    cout << "const conversion and array or function to pointer are the only automatic conversions for arguments to parameters with template types." << endl;
+}
+
+void ex16_34() {
+    cout << "-----ex16.34-----" << endl;
+    // compare("hi", "world");   illegal, size not match
+    compare("bye", "dad");       //char (&arr)[3]
+}
+
+
+
+void ex16_35() {
+    cout << "-----ex16.35-----" << endl;
+    /**
+    template <typename T> T calc(T, int);
+    template <typename T> T fcn(T, T);
+    double d;
+    float f;
+    char c;
+    calc(c, 'c');  // T is char, convert 'c' to int
+    calc(d, f);   // T is double, convert f to int
+    fcn(c, 'c');  // T is char
+    //fcn(d, f);  illegal, d and f are different types
+    */
+}
+
+
+void ex16_36() {
+    cout << "-----ex16.36-----" << endl;
+    /**
+    template <typename T> void f1(T, T);
+    template <typename T1, typename T2> void f2(T1, T2);
+    int i = 0, j = 42, *p1 = &i, *p2 = &j;
+    const int *cp1 = &i, *cp2 = &j;
+    f1(p1, p2);   // T is int*
+    f2(p1, p2);   // T1 and T2 are int*
+    f1(cp1, cp2); // T is int*,  const is ignored
+    f2(cp1, cp2); // T1 and T2 are int*, const is ignored
+    // f1(p1, cp1);  illegal
+    f2(p1, cp1);  // T1 is int*, T2 is int*
+    */
+}
+
+
+void ex16_37() {
+    cout << "-----ex16.37-----" << endl;
+    int i = 90;
+    double d = 87;
+    max<int>(i, d);
+}
+
+void ex16_38() {
+    cout << "-----ex16.38-----" << endl;
+    cout << "template <class T, class... Args> shared_ptr<T> make_shared (Args&&... args);\n";
+    cout << "T is used in the return type, compiler can't deduce it, we have to explicit sepcify. " << endl;
+}
+
+void ex16_39() {
+    cout << "-----ex16.39-----" << endl;
+    compare<string>("hello", "hi");
+}
 
 
 int main(int argc, const char * argv[]) {
@@ -332,5 +399,13 @@ int main(int argc, const char * argv[]) {
 //    ex16_23();
 //    ex16_24();
 //    ex16_25();
+//    ex16_32();
+//    ex16_33();
+//    ex16_34();
+//    ex16_35();
+//    ex16_36();
+//    ex16_37();
+//    ex16_38();
+//    ex16_39();
     return 0;
 }
