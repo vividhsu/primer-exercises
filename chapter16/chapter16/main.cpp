@@ -10,6 +10,7 @@
 #include <vector>
 #include <list>
 #include <fstream>
+#include <utility>
 
 #include "Sales_data.h"
 #include "Blob.h"
@@ -372,6 +373,102 @@ void ex16_39() {
     compare<string>("hello", "hi");
 }
 
+template <typename T>
+auto sum(T a, T b) -> decltype(a + b)
+{
+    return a + b;
+}
+
+void ex16_41() {
+    cout << "-----ex16.41-----" << endl;
+    cout << sum(1122334455667788, 22334455667788) << endl;
+}
+
+void ex16_42() {
+    cout << "-----ex16.42-----" << endl;
+    /**
+    template <typename T> void g(T&& val);
+    int i = 0;
+    const int ci = i;
+    g(i);   // T is int&, val is int&& & => int&
+    g(ci);  // T is const int&, val is const int&& & => const int&
+    g(i * ci); // T is int, val is int&&
+    */
+}
+
+void ex16_43() {
+    cout << "-----ex16.43-----" << endl;
+    /**
+     g(i = ci) // T is int&, val is int&& & => int&
+    */
+}
+
+void ex16_44() {
+    cout << "-----ex16.44-----" << endl;
+    /**
+     template <typename T> void g(T val);
+     int i = 0;
+     const int ci = i;
+     g(i);   // T is int, val is int
+     g(ci);  // T is int, val is int
+     g(i * ci); // T is int, val is int
+     
+     
+     template <typename T> void g(const T& val);
+     int i = 0;
+     const int ci = i;
+     g(i);   // T is int, val is const int&
+     g(ci);  // T is int, val is const int&
+     g(i * ci); // T is int
+    */
+}
+
+void ex16_45() {
+    cout << "-----ex16.45-----" << endl;
+    /**
+     template <typename T> void g(T&& val) {
+        vector<T> v;
+     }
+     
+     T is int
+    */
+}
+
+
+void ex16_46() {
+    cout << "-----ex16.46-----" << endl;
+    /**
+     for (size_t i = 0; i != size(); ++i)
+        alloc.construct(dest++, std::move(*elem++));
+     
+     std::move convert the lvalue to rvalue
+     */
+}
+
+void f1(int v1, int v2) {
+    cout << v1 << " " << ++v2 << endl;
+}
+
+void f2(int v1, int &v2) {
+    cout << v1 << " " << ++v2 << endl;
+}
+
+void f3(int &&v1, int v2) {
+    cout << v1 << " " << ++v2 << endl;
+}
+
+template <typename F, typename T1, typename T2>
+void flip(F f, T1&& t1, T2&& t2) {
+    f(std::forward<T2>(t2), std::forward<T1>(t1));
+}
+
+void ex16_47() {
+    cout << "-----ex16.47-----" << endl;
+    int i = 15;
+    flip(f1, i, 51);
+    flip(f2, i, 51);
+    flip(f2, i, 51);
+}
 
 int main(int argc, const char * argv[]) {
 //    ex16_01();
@@ -407,5 +504,12 @@ int main(int argc, const char * argv[]) {
 //    ex16_37();
 //    ex16_38();
 //    ex16_39();
+//    ex16_41();
+//    ex16_42();
+//    ex16_43();
+//    ex16_44();
+//    ex16_45();
+//    ex16_46();
+    ex16_47();
     return 0;
 }
