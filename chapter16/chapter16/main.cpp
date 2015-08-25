@@ -18,6 +18,7 @@
 #include "Vec.h"
 #include "TextQuery.h"
 #include "QueryResult.h"
+#include "debug_rep.h"
 
 
 using std::cout;
@@ -470,6 +471,130 @@ void ex16_47() {
     flip(f2, i, 51);
 }
 
+void ex16_48() {
+    cout << "-----ex16.48-----" << endl;
+    string s("hi");
+    cout << debug_rep(s) << endl;
+    const string *sp = &s;
+    //cout << debug_rep(sp) << endl;
+    //cout << debug_rep("hi world") << endl;
+}
+
+template <typename T> void f(T)
+{
+    cout << "f(T) called" << endl;
+}
+
+template <typename T> void f(const T*)
+{
+    cout << "f(const T*) called" << endl;
+}
+
+template <typename T> void g(T) {
+    cout << "g(T) called" << endl;
+}
+
+template <typename T> void g(T*) {
+    cout << "g(T*) called" << endl;
+}
+
+void ex16_49() {
+    cout << "-----ex16.49-----" << endl;
+    int i = 42, *p = &i;
+    const int ci = 0, *p2 = &ci;
+    g(42);    // g(T), T is int
+    g(p);     // g(T*), T is int
+    g(ci);    // g(T), T is const int
+    g(p2);    // g(T*), T is const int
+    f(42);    // f(T), T is int
+    f(p);     // f(T), T is int*
+    f(ci);    // f(T), T is const int
+    f(p2);    // f(T*), T is int
+}
+
+
+
+void ex16_50() {
+    cout << "-----ex16.50-----" << endl;
+    int i = 42, *p = &i;
+    const int ci = 0, *p2 = &ci;
+    g(42);
+    g(p);
+    g(ci);
+    g(p2);
+    f(42);
+    f(p);
+    f(ci);
+    f(p2);
+}
+
+template <typename T, typename... Args>
+void foo(const T& t, const Args& ... rest){
+    cout << sizeof...(Args) << endl;
+    cout << sizeof...(rest) << endl;
+}
+
+void ex16_51() {
+    cout << "-----ex16.51-----" << endl;
+    
+}
+
+void ex16_52() {
+    cout << "-----ex16.52-----" << endl;
+    int i = 0;
+    double d = 3.14;
+    string s = "how now brown cow";
+    foo(i, s, 42, d);
+    foo(s, 42, "hi");
+    foo(d, s);
+    foo("hi");
+}
+
+template <typename T>
+ostream &print(ostream &os, const T& t) {
+    return os << t;
+}
+
+template <typename T, typename... Arg>
+ostream &print(ostream &os, const T& t, const Arg& ... arg) {
+    os << t << ", ";
+    return print(os, arg...);
+}
+
+void ex16_53() {
+    cout << "-----ex16.53-----" << endl;
+    int i = 0;
+    double d = 3.14;
+    string s = "how now brown cow";
+    print(cout, i, s, d);
+}
+
+void ex16_54() {
+    cout << "-----ex16.54-----" << endl;
+    cout << "it won't compile." << endl;
+}
+
+void ex16_55() {
+    cout << "-----ex16.55-----" << endl;
+    cout << "no matching function for call to print(os)" << endl;
+}
+
+template <typename... Args>
+ostream &errorMsg(ostream &os, const Args&... rest) {
+    return print(os, debug_rep(rest)...);
+}
+
+void ex16_56() {
+    cout << "-----ex16.56-----" << endl;
+    
+}
+
+void ex16_57() {
+    cout << "-----ex16.57-----" << endl;
+    cout << "the one takes initializer_list only support one type" << endl;
+}
+
+
 int main(int argc, const char * argv[]) {
 //    ex16_01();
 //    ex16_02();
@@ -510,6 +635,16 @@ int main(int argc, const char * argv[]) {
 //    ex16_44();
 //    ex16_45();
 //    ex16_46();
-    ex16_47();
+//    ex16_47();
+//    ex16_48();
+//    ex16_49();
+//    ex16_50();
+//    ex16_51();
+//    ex16_52();
+//    ex16_53();
+//    ex16_54();
+//    ex16_55();
+//    ex16_56();
+//    ex16_57();
     return 0;
 }

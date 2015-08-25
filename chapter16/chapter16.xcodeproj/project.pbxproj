@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E063F451B8A7F4200374C33 /* debug_rep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E063F431B8A7F4200374C33 /* debug_rep.cpp */; };
 		5E3273EA1B7C41F3006B1AC6 /* TextQuery.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E3273E81B7C41F3006B1AC6 /* TextQuery.cpp */; };
 		5E3273EF1B7C495B006B1AC6 /* input_16_21.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5E3273EE1B7C48CA006B1AC6 /* input_16_21.txt */; };
 		5E3D84AB1B6B029300FACBAD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D84AA1B6B029300FACBAD /* main.cpp */; };
@@ -26,6 +27,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5E063F431B8A7F4200374C33 /* debug_rep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = debug_rep.cpp; sourceTree = "<group>"; };
+		5E063F441B8A7F4200374C33 /* debug_rep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = debug_rep.h; sourceTree = "<group>"; };
 		5E3273E61B7C408F006B1AC6 /* DebugDelete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugDelete.h; sourceTree = "<group>"; };
 		5E3273E81B7C41F3006B1AC6 /* TextQuery.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextQuery.cpp; sourceTree = "<group>"; };
 		5E3273E91B7C41F3006B1AC6 /* TextQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextQuery.h; sourceTree = "<group>"; };
@@ -79,6 +82,8 @@
 				5E3273EC1B7C435E006B1AC6 /* QueryResult.h */,
 				5E3273E91B7C41F3006B1AC6 /* TextQuery.h */,
 				5E3273E81B7C41F3006B1AC6 /* TextQuery.cpp */,
+				5E063F431B8A7F4200374C33 /* debug_rep.cpp */,
+				5E063F441B8A7F4200374C33 /* debug_rep.h */,
 			);
 			path = chapter16;
 			sourceTree = "<group>";
@@ -141,6 +146,7 @@
 			files = (
 				5E3D84AB1B6B029300FACBAD /* main.cpp in Sources */,
 				5E3273EA1B7C41F3006B1AC6 /* TextQuery.cpp in Sources */,
+				5E063F451B8A7F4200374C33 /* debug_rep.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
